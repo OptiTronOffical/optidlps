@@ -236,6 +236,3 @@ MIT — do whatever you want, no warranty.
 
 ```
 
-### Where to place it
-
-Save it as `README.md` in the root of your repo, right next to `index.html` and `dlps.json`. GitHub, GitLab, and most Git hosts will render it automatically on the repo homepage.
