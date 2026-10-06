@@ -1,4 +1,4 @@
-```markdown
+
 # PS5 Package Store
 
 A sleek, standalone web library for browsing a PS5 package catalog — games, DLC, updates, and more. Drop a JSON file next to the HTML, open it in a browser, and browse. No build step, no dependencies, no server required beyond a static file host.
