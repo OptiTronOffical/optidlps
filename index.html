@@ -55,10 +55,6 @@ a{color:inherit;text-decoration:none}
 .search-wrap input::placeholder{color:var(--tx-3)}
 .search-wrap input:focus{border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-soft);background:rgba(0,0,0,.5)}
 .top-actions{display:flex;align-items:center;gap:9px;flex:none;margin-left:auto}
-select.sel{padding:11px 34px 11px 15px;font-size:12.5px;font-weight:600;background:rgba(0,0,0,.36);border:1px solid var(--line);border-radius:var(--r-pill);color:var(--tx-2);outline:none;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a6479' stroke-width='1.7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;transition:border-color .18s,color .18s}
-select.sel:hover{color:var(--tx);border-color:var(--line-2)}
-select.sel:focus{border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-soft)}
-select.sel option{background:#0a0e16;color:var(--tx)}
 .count-pill{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(0,0,0,.36);font-family:var(--m);font-size:11.5px;color:var(--tx-2);white-space:nowrap}
 .count-pill b{color:var(--tx);font-weight:600}
 .act-btn{display:inline-flex;align-items:center;gap:8px;padding:0 16px;height:42px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(255,255,255,.035);color:var(--tx-2);font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .18s,border-color .18s,color .18s,transform .18s,box-shadow .18s,opacity .18s}
@@ -76,7 +72,64 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .act-btn.update:hover{background:rgba(16,185,129,.24);border-color:rgba(16,185,129,.66);color:#a7f3d0}
 .act-btn.update svg{transition:transform .3s}
 .act-btn.update.spinning svg{animation:spin .8s linear infinite}
+.act-btn.filter,.act-btn.sortbtn{border-color:rgba(43,127,255,.34);background:var(--blue-soft);color:#93c5fd}
+.act-btn.filter:hover,.act-btn.sortbtn:hover{background:rgba(43,127,255,.22);border-color:rgba(43,127,255,.62);color:#c8e9ff}
+.act-btn.filter.on{background:linear-gradient(135deg,var(--blue),#1e5fd9);border-color:transparent;color:#fff;box-shadow:0 10px 22px -12px var(--blue-glow),inset 0 1px 0 rgba(255,255,255,.28)}
 @keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── Popovers ──────────────────────────────────────────────────────── */
+.popover-wrap{position:relative;display:inline-flex}
+.popover{position:absolute;top:calc(100% + 10px);right:0;width:320px;max-width:calc(100vw - 32px);border-radius:var(--r-lg);border:1px solid var(--line);background:linear-gradient(180deg,var(--surface-2),var(--surface));box-shadow:var(--shadow-lg);padding:18px;z-index:300;display:none;animation:pop .2s var(--ease)}
+.popover.open{display:block}
+.popover::before{content:'';position:absolute;top:-6px;right:22px;width:12px;height:12px;background:var(--surface-2);border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
+@keyframes pop{from{opacity:0;transform:translateY(-6px) scale(.97)}to{opacity:1;transform:none}}
+.popover-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.popover-head h4{font-size:10.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--tx-3)}
+.popover-head button{padding:5px 12px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--tx-3);font-size:10.5px;font-weight:700;cursor:pointer;transition:color .18s,border-color .18s,background .18s}
+.popover-head button:hover{color:var(--tx);border-color:var(--line-2);background:rgba(255,255,255,.05)}
+.pop-section{margin-bottom:16px}
+.pop-section:last-child{margin-bottom:0}
+.pop-label{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3);margin-bottom:8px}
+.pop-chips{display:flex;flex-wrap:wrap;gap:6px}
+.pop-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:11.5px;font-weight:600;color:var(--tx-2);cursor:pointer;transition:all .18s}
+.pop-chip:hover{border-color:var(--line-2);color:var(--tx);transform:translateY(-1px)}
+.pop-chip.on{background:linear-gradient(135deg,var(--blue),#1e5fd9);border-color:transparent;color:#fff;box-shadow:0 8px 18px -10px var(--blue-glow),inset 0 1px 0 rgba(255,255,255,.28)}
+.pop-chip .pc-dot{width:7px;height:7px;border-radius:50%;flex:none}
+.pop-chip .pc-dot.game{background:var(--blue)}
+.pop-chip .pc-dot.dlc{background:var(--purple)}
+.pop-chip .pc-dot.update{background:var(--amber)}
+.pop-chip .pc-dot.app{background:var(--green)}
+.pop-chip .pc-dot.theme{background:var(--pink)}
+.pop-chip .pc-dot.demo{background:var(--gray)}
+.pop-chip.on .pc-dot{background:#fff}
+.pop-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;border-radius:var(--r-md);border:1px solid var(--line);background:rgba(0,0,0,.2);cursor:pointer;transition:border-color .18s,background .18s;margin-bottom:6px}
+.pop-row:last-child{margin-bottom:0}
+.pop-row:hover{border-color:var(--line-2);background:rgba(255,255,255,.02)}
+.pop-row .pr-left{display:flex;align-items:center;gap:10px;min-width:0}
+.pop-row .pr-ico{font-size:14px;line-height:1;flex:none}
+.pop-row .pr-label{font-size:12.5px;font-weight:600;color:var(--tx-2);letter-spacing:-.005em}
+.pop-row.on{border-color:rgba(43,127,255,.5);background:var(--blue-soft)}
+.pop-row.on .pr-label{color:var(--tx)}
+.pop-switch{width:34px;height:20px;flex:none;border-radius:99px;background:rgba(255,255,255,.08);border:1px solid var(--line);position:relative;transition:background .18s,border-color .18s}
+.pop-switch::after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--tx-3);transition:transform .2s var(--ease),background .18s}
+.pop-row.on .pop-switch{background:var(--blue);border-color:var(--blue)}
+.pop-row.on .pop-switch::after{transform:translateX(14px);background:#fff}
+.pop-select{width:100%;padding:10px 32px 10px 14px;font-size:12.5px;background:rgba(0,0,0,.36);border:1px solid var(--line);border-radius:var(--r-md);color:var(--tx);outline:none;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a6479' stroke-width='1.7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;transition:border-color .18s}
+.pop-select:hover{border-color:var(--line-2)}
+.pop-select:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+.pop-select option{background:#0a0e16;color:var(--tx)}
+.pop-sort-opt{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:var(--r-md);border:1px solid transparent;background:transparent;cursor:pointer;transition:background .18s,border-color .18s;width:100%;text-align:left;color:inherit;font:inherit;margin-bottom:3px}
+.pop-sort-opt:last-child{margin-bottom:0}
+.pop-sort-opt:hover{background:rgba(255,255,255,.04)}
+.pop-sort-opt.on{background:var(--blue-soft);border-color:rgba(43,127,255,.4)}
+.pop-sort-opt .so-ico{width:22px;height:22px;flex:none;display:grid;place-items:center;color:var(--tx-3);font-size:13px}
+.pop-sort-opt.on .so-ico{color:var(--blue-2)}
+.pop-sort-opt .so-label{flex:1;font-size:12.5px;font-weight:600;color:var(--tx-2);letter-spacing:-.005em}
+.pop-sort-opt.on .so-label{color:var(--tx);font-weight:700}
+.pop-sort-opt .so-check{width:16px;height:16px;flex:none;border-radius:50%;border:1.5px solid var(--line-2);display:grid;place-items:center;transition:background .18s,border-color .18s}
+.pop-sort-opt.on .so-check{background:var(--blue);border-color:var(--blue)}
+.pop-sort-opt.on .so-check::after{content:'';width:6px;height:6px;border-radius:50%;background:#fff}
+.filter-count{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;padding:0 6px;border-radius:99px;background:#fff;color:var(--blue);font-family:var(--m);font-size:10px;font-weight:800;margin-left:-2px}
 
 .catalog-tabs{display:flex;align-items:center;gap:6px;padding:5px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(0,0,0,.36);overflow-x:auto;scrollbar-width:none;max-width:100%}
 .catalog-tabs::-webkit-scrollbar{display:none}
@@ -255,7 +308,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .spec.hl{border-color:var(--amber-line);background:var(--amber-soft)}
 .spec.hl .v{color:#fcd34d;font-family:var(--m);letter-spacing:.04em}
 
-/* Included-items list (grouped PFS releases) */
 .includes{display:flex;flex-direction:column;gap:8px}
 .inc-row{display:flex;align-items:center;gap:12px;padding:12px 15px;border-radius:var(--r-md);border:1px solid var(--line);background:rgba(0,0,0,.24)}
 .inc-ico{width:34px;height:34px;flex:none;border-radius:11px;display:grid;place-items:center;font-size:15px;line-height:1;border:1px solid var(--line);background:rgba(255,255,255,.03)}
@@ -395,7 +447,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .foot-btn.pw{color:#fcd34d}
 .foot-btn.pw:hover{color:#ffe6b3}
 
-@media (max-width:1300px){.act-btn span{display:none}.act-btn{padding:0 13px}}
+@media (max-width:1300px){.act-btn span{display:none}.act-btn{padding:0 13px}.filter-count{position:absolute;top:-2px;right:-2px;margin-left:0}}
 @media (max-width:1000px){.brand-txt .n{max-width:150px}}
 @media (max-width:820px){
   .topbar{flex-wrap:wrap;padding:12px 14px;gap:12px}
@@ -408,6 +460,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   .grid{grid-template-columns:repeat(auto-fill,minmax(154px,1fr));gap:16px}
   .hero{padding:32px 0 22px}
   .ub-source{max-width:160px}
+  .popover{width:290px}
 }
 @media (max-width:520px){
   .brand-txt .s{display:none}
@@ -436,6 +489,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   .catalog-tabs{width:100%;order:4}
   .cat-tab{flex:1;justify-content:center;padding:8px 12px}
   .cat-tab span.cat-name{display:none}
+  .popover{width:calc(100vw - 28px);right:-100px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
@@ -454,17 +508,17 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   </div>
 
   <nav class="catalog-tabs" id="catalogTabs" aria-label="Catalog sources">
-    <button class="cat-tab active" data-cat="dlps" type="button" title="DLPSGAME catalog">
+    <button class="cat-tab active" data-cat="dlps" type="button" title="Loads dlps.json">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h2M8 10v4M15 11h.01M17 13h.01"/></svg>
-      <span class="cat-name">DLPS/Pippo</span>
+      <span class="cat-name">DLPSGAME</span>
       <span class="tab-count" id="tabCountDlps">—</span>
     </button>
-    <button class="cat-tab" data-cat="pippo" type="button" title=".exfat catalog">
+    <button class="cat-tab" data-cat="pippo" type="button" title="Loads pippo.json">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h2M12 13h2M16 13h1M8 17h6"/></svg>
-      <span class="cat-name">exfat</span>
+      <span class="cat-name">.exfat</span>
       <span class="tab-count" id="tabCountPippo">—</span>
     </button>
-    <button class="cat-tab" data-cat="pfs" type="button" title="PFS catalog">
+    <button class="cat-tab" data-cat="pfs" type="button" title="Loads pfs.json">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
       <span class="cat-name">PFS</span>
       <span class="tab-count" id="tabCountPfs">—</span>
@@ -479,13 +533,44 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   </div>
 
   <div class="top-actions">
-    <select class="sel" id="sort" aria-label="Sort packages">
-      <option value="name">Name A–Z</option>
-      <option value="name-desc">Name Z–A</option>
-      <option value="category">Category</option>
-      <option value="links">Most links</option>
-      <option value="titleid">Title ID</option>
-    </select>
+    <div class="popover-wrap">
+      <button class="act-btn filter" id="filterBtn" type="button" title="Open filters">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M7 12h10M10 18h4"/></svg>
+        <span>Filter</span>
+        <span class="filter-count" id="filterCount" style="display:none">0</span>
+      </button>
+      <div class="popover" id="filterPopover" role="dialog" aria-label="Filter options">
+        <div class="popover-head">
+          <h4>Filters</h4>
+          <button id="filterClear" type="button">Clear all</button>
+        </div>
+        <div class="pop-section">
+          <div class="pop-label">Category</div>
+          <div class="pop-chips" id="filterCatChips"></div>
+        </div>
+        <div class="pop-section">
+          <div class="pop-label">Region</div>
+          <select class="pop-select" id="filterRegion">
+            <option value="">All regions</option>
+          </select>
+        </div>
+        <div class="pop-section">
+          <div class="pop-label">Refine</div>
+          <div id="filterToggles"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popover-wrap">
+      <button class="act-btn sortbtn" id="sortBtn" type="button" title="Change sort order">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11M3 12h7M3 18h11"/><path d="M18 9v10M15 16l3 3 3-3"/></svg>
+        <span id="sortLabel">Name A–Z</span>
+      </button>
+      <div class="popover" id="sortPopover" role="dialog" aria-label="Sort options">
+        <div class="popover-head"><h4>Sort by</h4></div>
+        <div id="sortOptions"></div>
+      </div>
+    </div>
 
     <button class="act-btn update" id="updateBtn" type="button" title="Check all catalogs for new titles">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7M21 3v6h-6"/></svg>
@@ -746,17 +831,20 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   'use strict';
 
   /* =====================================================================
-     CATALOG SOURCES — local files at the root
+     CATALOG SOURCES — each tab loads its own JSON file from the root
+       • DLPSGAME tab  →  dlps.json
+       • .exfat tab    →  pippo.json
+       • PFS tab       →  pfs.json
      ===================================================================== */
   var CATALOGS = {
-    dlps:  { id: 'dlps',  label: 'DLPSGAME', url: 'dlps.json' },
-    pippo: { id: 'pippo', label: '.exfat',   url: 'pippo.json' },
-    pfs:   { id: 'pfs',   label: 'PFS',      url: 'pfs.json' }
+    dlps:  { id: 'dlps',  label: 'DLPSGAME', url: 'dlps.json',  accent: 'dlps' },
+    pippo: { id: 'pippo', label: '.exfat',   url: 'pippo.json', accent: 'pippo' },
+    pfs:   { id: 'pfs',   label: 'PFS',      url: 'pfs.json',   accent: 'pfs' }
   };
 
   var CATALOG_ORDER = ['dlps', 'pippo', 'pfs'];
-  var LS_ACTIVE_CATALOG = 'ps5_active_catalog_v1';
-  var LS_COUNTS = 'ps5_catalog_counts_v1';
+  var LS_ACTIVE_CATALOG = 'ps5_active_catalog_v2';
+  var LS_COUNTS = 'ps5_catalog_counts_v2';
 
   var ETH_ADDRESS = '0x17E1D7f8A9641749A3f6A932Df09D36FE198df86';
   var TG_URL = 'https://t.me/OptiTronOffical';
@@ -776,16 +864,28 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     app:{label:'App',cls:'cat-app'},theme:{label:'Theme',cls:'cat-theme'},demo:{label:'Demo',cls:'cat-demo'}
   };
   var CATEGORY_ICON = { game:'🎮', dlc:'📦', update:'⬆️', app:'📱', theme:'🎨', demo:'🧪' };
+  var CATEGORY_ORDER = ['game','dlc','update','app','theme','demo'];
+
+  var SORT_OPTIONS = [
+    { id: 'name',       label: 'Name A–Z',        icon: '↑A' },
+    { id: 'name-desc',  label: 'Name Z–A',        icon: '↓Z' },
+    { id: 'category',   label: 'Category',        icon: '≣' },
+    { id: 'links',      label: 'Most links',      icon: '⛓' },
+    { id: 'titleid',    label: 'Title ID',        icon: '#' },
+    { id: 'updated',    label: 'Recently updated',icon: '🕒' }
+  ];
 
   var D = {};
   function cacheDom() {
-    var ids = ['brandName','search','sort','countPill','statTitles','statGames','statDlc','statLinks','chipbar','grid','footSource',
+    var ids = ['brandName','search','countPill','statTitles','statGames','statDlc','statLinks','chipbar','grid','footSource',
       'catalogTabs','tabCountDlps','tabCountPippo','tabCountPfs','heroTitle','heroSub','updateBtn','updateBtnText',
       'updateBanner','ubDot','ubLabel','ubTime','ubSep','ubSource','ubBadge','ubRefresh',
       'modal','modalClose','mCover','mTitle','mSub','mChips','mCopyAll','mSource','mIncludesSection','mIncludes','mSpecsSection','mSpecs','mLinkCount','mLinks',
       'mPasswords','mPippoCallout','noticeModal','noticePwList','noticeGotIt','noticeMore',
       'passModal','passPwListDlps','passPwListLocks','passCopyAll','passBtn','footPass',
-      'donateModal','ethAddress','copyEth','coffeeBtn','footCoffee','toasts','dropOverlay'];
+      'donateModal','ethAddress','copyEth','coffeeBtn','footCoffee','toasts','dropOverlay',
+      'filterBtn','filterPopover','filterCount','filterClear','filterCatChips','filterRegion','filterToggles',
+      'sortBtn','sortPopover','sortLabel','sortOptions'];
     for (var i = 0; i < ids.length; i++) D[ids[i]] = document.getElementById(ids[i]);
   }
 
@@ -881,12 +981,8 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   function catChipClass(cat) {
     return cat === 'game' ? 'b' : cat === 'dlc' ? 'p' : cat === 'update' ? 'a' : cat === 'app' ? 'g' : cat === 'theme' ? 'k' : cat === 'demo' ? 's' : 's';
   }
-  function catLinkClass(cat) {
-    return 'cat-' + (cat || 'other');
-  }
-  function catIcon(cat) {
-    return CATEGORY_ICON[String(cat || '').toLowerCase()] || '📦';
-  }
+  function catLinkClass(cat) { return 'cat-' + (cat || 'other'); }
+  function catIcon(cat) { return CATEGORY_ICON[String(cat || '').toLowerCase()] || '📦'; }
 
   function rafDebounce(fn, delay) {
     var timer = null;
@@ -966,17 +1062,31 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     return str + ' ' + units[i];
   }
 
+  function makeDefaultFilters() {
+    return {
+      query: '',
+      categories: [],
+      region: '',
+      sort: 'name',
+      hasLinks: false,
+      hasPippo: false,
+      hasUpdates: false,
+      hasDlc: false,
+      groupedOnly: false
+    };
+  }
+
   var state = {
     currentCatalogId: 'dlps',
     catalogs: {
-      dlps:  { items: [], loaded: false, error: null, lastUpdated: null, sourceUrl: null, sourceKind: null, strategies: [] },
-      pippo: { items: [], loaded: false, error: null, lastUpdated: null, sourceUrl: null, sourceKind: null, strategies: [] },
-      pfs:   { items: [], loaded: false, error: null, lastUpdated: null, sourceUrl: null, sourceKind: null, strategies: [] }
+      dlps:  { items: [], loaded: false, error: null, lastUpdated: null, sourceUrl: null, sourceKind: null },
+      pippo: { items: [], loaded: false, error: null, lastUpdated: null, sourceUrl: null, sourceKind: null },
+      pfs:   { items: [], loaded: false, error: null, lastUpdated: null, sourceUrl: null, sourceKind: null }
     },
     filters: {
-      dlps:  { query: '', category: 'all', sort: 'name' },
-      pippo: { query: '', category: 'all', sort: 'name' },
-      pfs:   { query: '', category: 'all', sort: 'name' }
+      dlps:  makeDefaultFilters(),
+      pippo: makeDefaultFilters(),
+      pfs:   makeDefaultFilters()
     },
     filtered: [],
     current: null,
@@ -987,12 +1097,13 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   function activeFilters() { return state.filters[state.currentCatalogId]; }
   function activeMeta() { return CATALOGS[state.currentCatalogId]; }
 
+  /* ── Banner ─────────────────────────────────────────────────────── */
   function showBannerLoading() {
     var b = D.updateBanner; if (!b) return;
     b.classList.remove('hidden','pippo','pfs');
     b.classList.add(state.currentCatalogId);
     D.ubDot.className = 'ub-dot loading';
-    D.ubLabel.textContent = 'Loading ' + activeMeta().label + ' catalog…';
+    D.ubLabel.textContent = 'Loading ' + activeMeta().label + ' (' + activeMeta().url + ')…';
     D.ubTime.style.display = 'none';
     D.ubSep.style.display = 'none';
     D.ubSource.style.display = 'none';
@@ -1013,8 +1124,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       D.ubSource.innerHTML = 'Source: <a href="' + esc(sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(sourceUrl) + '</a>';
     } else { D.ubSep.style.display = 'none'; D.ubSource.style.display = 'none'; }
     if (sourceKind === 'local') { D.ubBadge.style.display = ''; D.ubBadge.className = 'ub-badge direct'; D.ubBadge.textContent = 'local file'; }
-    else if (sourceKind === 'proxy') { D.ubBadge.style.display = ''; D.ubBadge.className = 'ub-badge proxy'; D.ubBadge.textContent = 'via CORS proxy'; }
-    else if (sourceKind === 'direct') { D.ubBadge.style.display = ''; D.ubBadge.className = 'ub-badge direct'; D.ubBadge.textContent = 'direct'; }
     else D.ubBadge.style.display = 'none';
   }
 
@@ -1031,6 +1140,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     D.ubBadge.style.display = 'none';
   }
 
+  /* ── Passwords ──────────────────────────────────────────────────── */
   function renderPasswordRows(container, list, opts) {
     if (!container) return;
     opts = opts || {};
@@ -1073,9 +1183,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     });
   }
 
-  /* =====================================================================
-     NORMALIZE — handles dlps.json / pippo.json / pfs.json formats
-     ===================================================================== */
+  /* ── Normalize ─────────────────────────────────────────────────── */
   function normalize(raw) {
     if (!raw) return [];
     var list = null;
@@ -1133,7 +1241,9 @@ select.sel option{background:#0a0e16;color:var(--tx)}
         title: String(title),
         titleId: String(titleId),
         category: cat,
+        categories: [cat],
         version: m.version != null && m.version !== '' ? String(m.version) : '',
+        versions: m.version ? [String(m.version)] : [],
         posterUrl: m.posterUrl || m.poster_url || m.cover || '',
         description: String(desc),
         downloadSource: m.downloadSource || m.source || '',
@@ -1158,11 +1268,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     return out;
   }
 
-  /* =====================================================================
-     GROUPING — bundles entries that share a Title ID into one card.
-     Applied only to the PFS catalog, where the same game can appear as
-     separate base-game / update / DLC rows.
-     ===================================================================== */
+  /* ── Grouping (PFS only) ───────────────────────────────────────── */
   function groupByTitleId(items) {
     var map = {}; var order = [];
     for (var i = 0; i < items.length; i++) {
@@ -1216,10 +1322,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 
       for (var j = 0; j < it.links.length; j++) {
         var l = it.links[j];
-        g.links.push({
-          name: l.name, url: l.url, host: l.host, pippo: l.pippo,
-          category: it.category, version: it.version
-        });
+        g.links.push({ name: l.name, url: l.url, host: l.host, pippo: l.pippo, category: it.category, version: it.version });
         if (l.pippo) g.hasPippo = true;
       }
 
@@ -1249,15 +1352,14 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       }
     }
 
-    var catOrder = ['game','update','dlc','app','theme','demo'];
     for (var k = 0; k < order.length; k++) {
       var gg = order[k];
       if (!gg.categories.length && gg.category) gg.categories.push(gg.category);
       if (!gg.versions.length && gg.version) gg.versions.push(gg.version);
       if (gg._sizeRaw > 0) gg._sizeLabel = formatBytes(gg._sizeRaw);
       gg.categories.sort(function(a, b) {
-        var ai = catOrder.indexOf(a); if (ai === -1) ai = 99;
-        var bi = catOrder.indexOf(b); if (bi === -1) bi = 99;
+        var ai = CATEGORY_ORDER.indexOf(a); if (ai === -1) ai = 99;
+        var bi = CATEGORY_ORDER.indexOf(b); if (bi === -1) bi = 99;
         return ai - bi;
       });
       gg.category = gg.categories[0] || gg.category;
@@ -1269,7 +1371,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 
   function finalizeCatalog(id, data, lastModified, sourceKind) {
     var items = normalize(data);
-    /* PFS ships one row per package variant — bundle them into one card per game. */
     if (id === 'pfs') items = groupByTitleId(items);
     var ts = extractTimestamp(data) || lastModified || extractTimestampFromItems(items) || null;
     var c = state.catalogs[id];
@@ -1279,6 +1380,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     return { items: items, count: items.length, ts: ts, sourceKind: sourceKind };
   }
 
+  /* ── Stats & chips ─────────────────────────────────────────────── */
   function buildStats() {
     var items = active().items;
     var games = 0, dlc = 0, links = 0;
@@ -1304,43 +1406,99 @@ select.sel option{background:#0a0e16;color:var(--tx)}
         counts[c] = (counts[c] || 0) + 1;
       }
     }
-    var order = ['game','dlc','update','app','theme','demo'];
     var used = Object.keys(counts).sort(function (a, b) {
-      var ai = order.indexOf(a); if (ai === -1) ai = 99;
-      var bi = order.indexOf(b); if (bi === -1) bi = 99;
+      var ai = CATEGORY_ORDER.indexOf(a); if (ai === -1) ai = 99;
+      var bi = CATEGORY_ORDER.indexOf(b); if (bi === -1) bi = 99;
       if (ai !== bi) return ai - bi;
       return a.localeCompare(b);
     });
-    var curCat = activeFilters().category;
-    var html = '<button class="chip' + (curCat === 'all' ? ' on' : '') + '" data-cat="all" type="button">All <span class="n">' + items.length + '</span></button>';
+    var f = activeFilters();
+    var curCats = f.categories;
+    var allOn = curCats.length === 0;
+    var html = '<button class="chip' + (allOn ? ' on' : '') + '" data-cat="all" type="button">All <span class="n">' + items.length + '</span></button>';
     for (var k = 0; k < used.length; k++) {
       var cat = used[k];
       var meta = categoryMeta(cat);
-      html += '<button class="chip' + (curCat === cat ? ' on' : '') + '" data-cat="' + esc(cat) + '" type="button">' + esc(meta.label) + ' <span class="n">' + counts[cat] + '</span></button>';
+      var on = curCats.indexOf(cat) !== -1;
+      html += '<button class="chip' + (on ? ' on' : '') + '" data-cat="' + esc(cat) + '" type="button">' + esc(meta.label) + ' <span class="n">' + counts[cat] + '</span></button>';
     }
     D.chipbar.innerHTML = html;
   }
 
+  /* ── Apply filters & sort ──────────────────────────────────────── */
+  function countActiveFilters(f) {
+    var n = 0;
+    if (f.categories && f.categories.length) n += f.categories.length;
+    if (f.region) n++;
+    if (f.hasLinks) n++;
+    if (f.hasPippo) n++;
+    if (f.hasUpdates) n++;
+    if (f.hasDlc) n++;
+    if (f.groupedOnly) n++;
+    return n;
+  }
+
+  function updateFilterBadge() {
+    var n = countActiveFilters(activeFilters());
+    if (!D.filterCount) return;
+    if (n > 0) {
+      D.filterCount.textContent = n;
+      D.filterCount.style.display = '';
+      D.filterBtn.classList.add('on');
+    } else {
+      D.filterCount.style.display = 'none';
+      D.filterBtn.classList.remove('on');
+    }
+  }
+
   function apply() {
-    var f = activeFilters(), q = f.query, cat = f.category;
+    var f = activeFilters(), q = f.query;
+    var cats = f.categories || [];
     var items = active().items, out = [];
     for (var i = 0; i < items.length; i++) {
       var it = items[i];
       if (q && it._search.indexOf(q) < 0) continue;
-      if (cat !== 'all') {
-        var cats = it.categories || [it.category];
-        if (cats.indexOf(cat) === -1) continue;
+
+      if (cats.length) {
+        var itCats = it.categories || [it.category];
+        var match = false;
+        for (var c = 0; c < cats.length; c++) {
+          if (itCats.indexOf(cats[c]) !== -1) { match = true; break; }
+        }
+        if (!match) continue;
       }
+
+      if (f.region && (it.region || '') !== f.region) continue;
+      if (f.hasLinks && !it.links.length) continue;
+      if (f.hasPippo && !it.hasPippo) continue;
+      if (f.hasUpdates) {
+        var itCatsU = it.categories || [it.category];
+        if (itCatsU.indexOf('update') === -1) continue;
+      }
+      if (f.hasDlc) {
+        var itCatsD = it.categories || [it.category];
+        if (itCatsD.indexOf('dlc') === -1) continue;
+      }
+      if (f.groupedOnly && !it._grouped) continue;
+
       out.push(it);
     }
+
     var s = f.sort;
     if (s === 'name') out.sort(function(a,b){return (a.title||'').localeCompare(b.title||'')});
     else if (s === 'name-desc') out.sort(function(a,b){return (b.title||'').localeCompare(a.title||'')});
     else if (s === 'category') out.sort(function(a,b){var c=(a.category||'').localeCompare(b.category||''); if(c!==0) return c; return (a.title||'').localeCompare(b.title||'')});
     else if (s === 'links') out.sort(function(a,b){return b.links.length - a.links.length});
     else if (s === 'titleid') out.sort(function(a,b){return (a.titleId||'').localeCompare(b.titleId||'')});
+    else if (s === 'updated') out.sort(function(a,b){
+      var ad = a.updatedAt ? new Date(a.updatedAt).getTime() : 0;
+      var bd = b.updatedAt ? new Date(b.updatedAt).getTime() : 0;
+      return bd - ad;
+    });
+
     state.filtered = out;
     render();
+    updateFilterBadge();
   }
 
   function render() {
@@ -1348,9 +1506,16 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     D.countPill.innerHTML = '<b>' + list.length.toLocaleString() + '</b> ' + (list.length === 1 ? 'title' : 'titles');
     if (!active().items.length) return;
     if (!list.length) {
-      grid.innerHTML = '<div class="state"><div class="icon">🔍</div><h2>No titles match</h2><p>Try a different search term or switch category filters.</p><div class="actions"><button class="btn primary" id="resetFilters" type="button">Reset filters</button></div></div>';
+      var activeN = countActiveFilters(activeFilters());
+      grid.innerHTML = '<div class="state"><div class="icon">🔍</div><h2>No titles match</h2><p>' +
+        (activeN ? 'Your filter combination is too narrow. Try relaxing a few filters.' : 'Try a different search term or switch category filters.') +
+        '</p><div class="actions">' +
+        (activeN ? '<button class="btn ghost" id="resetAdvanced" type="button">Clear filters</button>' : '') +
+        '<button class="btn primary" id="resetFilters" type="button">Reset all</button></div></div>';
       var rb = document.getElementById('resetFilters');
       if (rb) rb.addEventListener('click', resetFilters);
+      var ra = document.getElementById('resetAdvanced');
+      if (ra) ra.addEventListener('click', resetAdvancedFilters);
       return;
     }
     var html = '';
@@ -1384,14 +1549,32 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 
   function resetFilters() {
     var f = activeFilters();
-    f.query = ''; f.category = 'all'; f.sort = 'name';
-    D.search.value = ''; D.sort.value = 'name';
-    var chips = D.chipbar.querySelectorAll('.chip');
-    for (var i = 0; i < chips.length; i++) chips[i].classList.toggle('on', chips[i].getAttribute('data-cat') === 'all');
+    var fresh = makeDefaultFilters();
+    for (var k in fresh) f[k] = fresh[k];
+    D.search.value = '';
     apply();
-    toast('Filters reset', 'ok');
+    buildChips();
+    renderFilterPopover();
+    updateSortLabel();
+    toast('All filters reset', 'ok');
   }
 
+  function resetAdvancedFilters() {
+    var f = activeFilters();
+    f.categories = [];
+    f.region = '';
+    f.hasLinks = false;
+    f.hasPippo = false;
+    f.hasUpdates = false;
+    f.hasDlc = false;
+    f.groupedOnly = false;
+    apply();
+    buildChips();
+    renderFilterPopover();
+    toast('Filters cleared', 'ok');
+  }
+
+  /* ── Grid wiring ───────────────────────────────────────────────── */
   function wireGrid() {
     D.grid.addEventListener('click', function (e) {
       var card = e.target.closest ? e.target.closest('.card') : null;
@@ -1409,6 +1592,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     });
   }
 
+  /* ── Detail modal ──────────────────────────────────────────────── */
   function openDetail(it) {
     state.current = it;
     var wrap = D.mCover;
@@ -1446,7 +1630,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 
     if (D.mPippoCallout) D.mPippoCallout.style.display = it.hasPippo ? '' : 'none';
 
-    /* ---- "Included in this release" block (grouped PFS rows) ---- */
     if (D.mIncludesSection && D.mIncludes) {
       if (it._grouped && it._entries && it._entries.length) {
         var incHtml = '';
@@ -1597,6 +1780,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     if (D.copyEth) D.copyEth.addEventListener('click', function () { copyText(ETH_ADDRESS, 'Wallet address copied — thank you! ☕'); });
   }
 
+  /* ── Catalog switch ────────────────────────────────────────────── */
   function setActiveTab(id) {
     var tabs = D.catalogTabs.querySelectorAll('.cat-tab');
     for (var i = 0; i < tabs.length; i++) tabs[i].classList.toggle('active', tabs[i].getAttribute('data-cat') === id);
@@ -1610,9 +1794,9 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   }
   function updateHeroForCatalog(id) {
     var titles = {
-      dlps:  { h: 'PS5 <em>package library</em>', p: 'Browse the collection, filter by category, and grab download links for every game, update, and DLC.' },
-      pippo: { h: '.exfat <em>catalog</em>', p: 'Titles hosted on .exfat. Some links go through a Pippo link-lock page — use the password <b>pippo</b> (lowercase) when prompted.' },
-      pfs:   { h: 'PFS <em>catalog</em>', p: 'PFS-sourced packages and updates, bundled per game. Every category, version, and link for a title is shown together on a single card.' }
+      dlps:  { h: 'PS5 <em>package library</em>', p: 'Browse the collection, filter by category, and grab download links for every game, update, and DLC. Loaded from <b>dlps.json</b>.' },
+      pippo: { h: '.exfat <em>catalog</em>', p: 'Titles hosted on .exfat, loaded from <b>pippo.json</b>. Some links go through a Pippo link-lock page — use the password <b>pippo</b> (lowercase) when prompted.' },
+      pfs:   { h: 'PFS <em>catalog</em>', p: 'PFS-sourced packages from <b>pfs.json</b>, bundled per game. Every category, version, and link for a title is shown together on a single card.' }
     };
     var t = titles[id] || titles.dlps;
     D.heroTitle.innerHTML = t.h;
@@ -1620,14 +1804,16 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   }
   function switchCatalog(id) {
     if (!CATALOGS[id]) return;
-    if (state.currentCatalogId === id && state.catalogs[id].loaded) { setActiveTab(id); return; }
+    if (state.currentCatalogId === id && state.catalogs[id].loaded) { setActiveTab(id); closeAllPopovers(); return; }
     state.currentCatalogId = id;
     try { localStorage.setItem(LS_ACTIVE_CATALOG, id); } catch (e) {}
     setActiveTab(id);
     updateHeroForCatalog(id);
+    closeAllPopovers();
     var f = activeFilters();
     D.search.value = f.query;
-    D.sort.value = f.sort;
+    updateSortLabel();
+    renderFilterPopover();
     var c = state.catalogs[id];
     if (c.loaded && c.items.length) {
       showBannerLoaded(c.lastUpdated, c.sourceUrl, c.sourceKind);
@@ -1645,6 +1831,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     });
   }
 
+  /* ── Loading / error states ────────────────────────────────────── */
   function showLoading() {
     var sk = '';
     for (var i = 0; i < 14; i++) sk += '<div class="sk"><div class="sk-c"></div><div class="sk-l"></div><div class="sk-l short"></div></div>';
@@ -1670,6 +1857,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     if (pb) pb.addEventListener('click', openPasswords);
   }
 
+  /* ── Fetch ─────────────────────────────────────────────────────── */
   function fetchCatalog(id) {
     return new Promise(function (resolve, reject) {
       var meta = CATALOGS[id];
@@ -1730,12 +1918,12 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       var dotClass = d.ok ? 'ok' : 'fail';
       var meta = CATALOGS[d.id];
       rows += '<div class="diag-row"><span class="dr-dot ' + dotClass + '"></span><div class="dr-body">' +
-        '<div class="dr-name">' + esc(meta.label) + '<span class="dr-tag">' + (d.ok ? 'loaded' : 'failed') + '</span></div>' +
+        '<div class="dr-name">' + esc(meta.label) + ' <span class="dr-tag">' + esc(meta.url) + '</span><span class="dr-tag">' + (d.ok ? 'loaded' : 'failed') + '</span></div>' +
         '<div class="dr-url">' + esc(d.url) + '</div>' +
         (d.ok ? '' : '<div class="dr-err">' + esc(d.errorMessage || 'Failed to load') + '</div>') +
       '</div></div>';
     }
-    D.grid.innerHTML = '<div class="state"><div class="icon">⚠️</div><h2>Couldn\'t load the catalogs</h2>' +
+    D.grid.innerHTML = '<div class="state"><div class="icon">⚠️</div><h2>Couldn\'t load the catalog</h2>' +
       '<p>Make sure <code>dlps.json</code>, <code>pippo.json</code>, and <code>pfs.json</code> are next to this HTML file and served over HTTP (not opened via <code>file://</code>).</p>' +
       '<div class="actions"><button class="btn primary" id="retryAll" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7M21 3v6h-6"/></svg>Retry all</button>' +
       '<label class="btn ghost" for="fileInput" style="cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>Choose JSON file<input type="file" id="fileInput" accept=".json,.txt,application/json" hidden></label></div>' +
@@ -1751,8 +1939,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     if (cb) cb.addEventListener('click', function () {
       var lines = ['OptiStore5 — diagnostics', ''];
       for (var i = 0; i < diag.length; i++) {
-        lines.push('• ' + CATALOGS[diag[i].id].label + (diag[i].ok ? ' ✓ loaded' : ' ✕ failed'));
-        lines.push('  ' + diag[i].url);
+        lines.push('• ' + CATALOGS[diag[i].id].label + ' → ' + CATALOGS[diag[i].id].url + (diag[i].ok ? ' ✓ loaded' : ' ✕ failed'));
         if (!diag[i].ok && diag[i].errorMessage) lines.push('  ' + diag[i].errorMessage);
         lines.push('');
       }
@@ -1876,23 +2063,204 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     D.updateBtn.addEventListener('click', function () { refreshAllCatalogs({ reason: 'update' }); });
   }
 
-  function wireSearchAndSort() {
+  /* ── Search ────────────────────────────────────────────────────── */
+  function wireSearch() {
     var onSearch = rafDebounce(function (v) { activeFilters().query = v.toLowerCase().trim(); apply(); }, 110);
     D.search.addEventListener('input', function () { onSearch(this.value); });
-    D.sort.addEventListener('change', function () { activeFilters().sort = this.value; apply(); });
   }
+
+  /* ── Filter popover ────────────────────────────────────────────── */
+  function renderFilterPopover() {
+    var f = activeFilters();
+    var items = active().items;
+
+    /* Category chips */
+    var counts = {};
+    for (var i = 0; i < items.length; i++) {
+      var cats = items[i].categories || [items[i].category || 'other'];
+      for (var ci = 0; ci < cats.length; ci++) {
+        var c = cats[ci] || 'other';
+        counts[c] = (counts[c] || 0) + 1;
+      }
+    }
+    var used = Object.keys(counts).sort(function (a, b) {
+      var ai = CATEGORY_ORDER.indexOf(a); if (ai === -1) ai = 99;
+      var bi = CATEGORY_ORDER.indexOf(b); if (bi === -1) bi = 99;
+      if (ai !== bi) return ai - bi;
+      return a.localeCompare(b);
+    });
+    var chipsHtml = '';
+    for (var k = 0; k < used.length; k++) {
+      var cat = used[k];
+      var meta = categoryMeta(cat);
+      var on = f.categories.indexOf(cat) !== -1;
+      chipsHtml += '<button class="pop-chip' + (on ? ' on' : '') + '" data-fcat="' + esc(cat) + '" type="button">' +
+        '<span class="pc-dot ' + esc(cat) + '"></span>' + esc(meta.label) + ' <span style="opacity:.7">' + counts[cat] + '</span></button>';
+    }
+    if (!chipsHtml) chipsHtml = '<span style="font-size:11.5px;color:var(--tx-3)">No categories in this catalog</span>';
+    D.filterCatChips.innerHTML = chipsHtml;
+
+    /* Region dropdown */
+    var regions = {};
+    for (var r = 0; r < items.length; r++) {
+      var rg = (items[r].region || '').trim();
+      if (rg) regions[rg] = (regions[rg] || 0) + 1;
+    }
+    var rKeys = Object.keys(regions).sort();
+    var ropt = '<option value="">All regions</option>';
+    for (var ri = 0; ri < rKeys.length; ri++) {
+      var sel = rKeys[ri] === f.region ? ' selected' : '';
+      ropt += '<option value="' + esc(rKeys[ri]) + '"' + sel + '>' + esc(rKeys[ri]) + ' (' + regions[rKeys[ri]] + ')</option>';
+    }
+    if (!rKeys.length) ropt = '<option value="">No regions found</option>';
+    D.filterRegion.innerHTML = ropt;
+    D.filterRegion.value = f.region || '';
+
+    /* Toggles */
+    var toggles = [
+      { key: 'hasLinks',    ico: '🔗', label: 'Has download links' },
+      { key: 'hasPippo',    ico: '🔒', label: 'Has Pippo link-lock' },
+      { key: 'hasUpdates',  ico: '⬆️', label: 'Contains an update' },
+      { key: 'hasDlc',      ico: '📦', label: 'Contains DLC' },
+      { key: 'groupedOnly', ico: '🧩', label: 'Bundled releases only' }
+    ];
+    var th = '';
+    for (var t = 0; t < toggles.length; t++) {
+      var tg = toggles[t];
+      th += '<div class="pop-row' + (f[tg.key] ? ' on' : '') + '" data-toggle="' + tg.key + '">' +
+        '<div class="pr-left"><span class="pr-ico">' + tg.ico + '</span><span class="pr-label">' + tg.label + '</span></div>' +
+        '<span class="pop-switch"></span>' +
+      '</div>';
+    }
+    D.filterToggles.innerHTML = th;
+  }
+
+  function wireFilterPopover() {
+    /* Category chip clicks */
+    D.filterCatChips.addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('[data-fcat]') : null;
+      if (!btn) return;
+      var cat = btn.getAttribute('data-fcat');
+      var f = activeFilters();
+      var idx = f.categories.indexOf(cat);
+      if (idx === -1) f.categories.push(cat);
+      else f.categories.splice(idx, 1);
+      btn.classList.toggle('on');
+      apply();
+      buildChips();
+      renderFilterPopover();
+    });
+
+    /* Region dropdown */
+    D.filterRegion.addEventListener('change', function () {
+      activeFilters().region = this.value;
+      apply();
+    });
+
+    /* Toggles */
+    D.filterToggles.addEventListener('click', function (e) {
+      var row = e.target.closest ? e.target.closest('[data-toggle]') : null;
+      if (!row) return;
+      var key = row.getAttribute('data-toggle');
+      var f = activeFilters();
+      f[key] = !f[key];
+      row.classList.toggle('on');
+      apply();
+    });
+
+    /* Clear all */
+    D.filterClear.addEventListener('click', function () {
+      resetAdvancedFilters();
+      D.search.value = '';
+      activeFilters().query = '';
+      apply();
+    });
+  }
+
+  /* ── Sort popover ──────────────────────────────────────────────── */
+  function updateSortLabel() {
+    var s = activeFilters().sort;
+    var opt = null;
+    for (var i = 0; i < SORT_OPTIONS.length; i++) if (SORT_OPTIONS[i].id === s) { opt = SORT_OPTIONS[i]; break; }
+    if (D.sortLabel && opt) D.sortLabel.textContent = opt.label;
+  }
+
+  function renderSortPopover() {
+    var cur = activeFilters().sort;
+    var html = '';
+    for (var i = 0; i < SORT_OPTIONS.length; i++) {
+      var opt = SORT_OPTIONS[i];
+      html += '<button class="pop-sort-opt' + (opt.id === cur ? ' on' : '') + '" data-sort="' + opt.id + '" type="button">' +
+        '<span class="so-ico">' + opt.icon + '</span>' +
+        '<span class="so-label">' + esc(opt.label) + '</span>' +
+        '<span class="so-check"></span>' +
+      '</button>';
+    }
+    D.sortOptions.innerHTML = html;
+  }
+
+  function wireSortPopover() {
+    D.sortOptions.addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('[data-sort]') : null;
+      if (!btn) return;
+      var id = btn.getAttribute('data-sort');
+      activeFilters().sort = id;
+      updateSortLabel();
+      renderSortPopover();
+      apply();
+      closePopover(D.sortPopover);
+    });
+  }
+
+  /* ── Popover open/close helpers ────────────────────────────────── */
+  function closePopover(p) { if (p) p.classList.remove('open'); }
+  function closeAllPopovers() {
+    closePopover(D.filterPopover);
+    closePopover(D.sortPopover);
+  }
+  function togglePopover(p) {
+    var willOpen = !p.classList.contains('open');
+    closeAllPopovers();
+    if (willOpen) p.classList.add('open');
+  }
+
+  function wirePopovers() {
+    D.filterBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (!D.filterPopover.classList.contains('open')) renderFilterPopover();
+      togglePopover(D.filterPopover);
+    });
+    D.sortBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (!D.sortPopover.classList.contains('open')) renderSortPopover();
+      togglePopover(D.sortPopover);
+    });
+    D.filterPopover.addEventListener('click', function (e) { e.stopPropagation(); });
+    D.sortPopover.addEventListener('click', function (e) { e.stopPropagation(); });
+    document.addEventListener('click', function () { closeAllPopovers(); });
+  }
+
+  /* ── Chips (quick category filter) ─────────────────────────────── */
   function wireChips() {
     D.chipbar.addEventListener('click', function (e) {
       var chip = e.target.closest ? e.target.closest('.chip') : null;
       if (!chip) return;
       var c = chip.getAttribute('data-cat');
       var f = activeFilters();
-      f.category = (c === f.category) ? 'all' : c;
-      var chips = D.chipbar.querySelectorAll('.chip');
-      for (var i = 0; i < chips.length; i++) chips[i].classList.toggle('on', chips[i].getAttribute('data-cat') === f.category);
+      if (c === 'all') {
+        f.categories = [];
+      } else {
+        /* Single-select via chips: if only this cat is selected, deselect; else set to just it. */
+        if (f.categories.length === 1 && f.categories[0] === c) f.categories = [];
+        else f.categories = [c];
+      }
       apply();
+      buildChips();
+      renderFilterPopover();
     });
   }
+
+  /* ── Modal wiring ──────────────────────────────────────────────── */
   function wireModal() {
     D.modalClose.addEventListener('click', closeModal);
     D.modal.addEventListener('click', function (e) { if (e.target === this) closeModal(); });
@@ -1910,6 +2278,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       copyText(urls.join('\n'), urls.length + ' links copied');
     });
   }
+
   function wireBanner() {
     if (D.ubRefresh) D.ubRefresh.addEventListener('click', function () {
       this.classList.add('spinning');
@@ -1919,9 +2288,11 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       loadCatalog(state.currentCatalogId);
     });
   }
+
   function wireKeyboard() {
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
+        if (D.filterPopover.classList.contains('open') || D.sortPopover.classList.contains('open')) { closeAllPopovers(); return; }
         if (D.donateModal.classList.contains('open')) { closeDonate(); return; }
         if (D.passModal.classList.contains('open')) { closePasswords(); return; }
         if (D.noticeModal.classList.contains('open')) { markNoticeSeen(); closeNotice(); return; }
@@ -1944,6 +2315,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       }
     });
   }
+
   function wireImageHandlers() {
     document.addEventListener('load', function (e) {
       var t = e.target;
@@ -1954,6 +2326,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       if (t && t.tagName === 'IMG' && t.classList.contains('cover-img')) t.remove();
     }, true);
   }
+
   function wireDrop() {
     var overlay = D.dropOverlay;
     var depth = 0;
@@ -1973,6 +2346,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       readFile(file);
     });
   }
+
   function readFile(file) {
     var reader = new FileReader();
     reader.onload = function () {
@@ -1988,7 +2362,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       c.lastUpdated = ts; c.sourceUrl = file.name; c.sourceKind = 'local';
       updateTabCount(id, items.length);
       showBannerLoaded(ts, file.name, null);
-      buildStats(); buildChips(); apply();
+      buildStats(); buildChips(); apply(); renderFilterPopover();
       toast('Loaded ' + items.length + ' titles from ' + file.name,'ok');
     };
     reader.onerror = function () { toast('Could not read file','err'); };
@@ -1998,7 +2372,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   function boot() {
     cacheDom();
     wireImageHandlers();
-    wireSearchAndSort();
+    wireSearch();
     wireChips();
     wireGrid();
     wireModal();
@@ -2009,6 +2383,11 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     wireUpdateButton();
     wireKeyboard();
     wireDrop();
+    wireFilterPopover();
+    wireSortPopover();
+    wirePopovers();
+    renderSortPopover();
+    updateSortLabel();
 
     var saved = null;
     try { saved = localStorage.getItem(LS_ACTIVE_CATALOG); } catch (e) {}
@@ -2020,7 +2399,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 
     var f = activeFilters();
     D.search.value = f.query;
-    D.sort.value = f.sort;
 
     showLoading();
     showBannerLoading();
