@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#04060b">
-<title>PS5 OptiStore</title>
+<title>PS5 Package Store</title>
 <style>
 /* ==========================================================================
    1. TOKENS
@@ -575,6 +575,12 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   box-shadow:0 10px 26px -12px rgba(245,165,36,.6);
 }
 .btn.amber:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.pink{
+  background:linear-gradient(135deg,var(--pink),#be185d);
+  color:#fff;
+  box-shadow:0 10px 26px -12px rgba(236,72,153,.6);
+}
+.btn.pink:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .btn.sm{font-size:11.5px;padding:8px 13px;border-radius:8px}
 .btn.sm svg{width:12px;height:12px}
 .btn.icon{padding:8px 11px}
@@ -758,7 +764,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 
 .link-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
 
-/* Pippo hint badge on link rows */
 .link-row.pippo{
   border-left-color:var(--pink);
   background:linear-gradient(90deg,rgba(236,72,153,.08),rgba(0,0,0,.26) 45%);
@@ -772,8 +777,14 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   background:var(--pink-soft);
   font-family:var(--m);font-size:9.5px;font-weight:700;
   color:#f9a8d4;
-  letter-spacing:.05em;text-transform:uppercase;
+  letter-spacing:.05em;
   white-space:nowrap;
+}
+.pippo-hint b{
+  font-weight:700;
+  text-transform:none;
+  letter-spacing:.02em;
+  color:#ffd1e6;
 }
 
 /* ==========================================================================
@@ -846,7 +857,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .donate-actions{display:flex;gap:8px;flex-wrap:wrap}
 .donate-actions .btn{flex:1}
 
-/* --- Notice / Passwords modal shared head --- */
 .notice-head{
   padding:28px 24px 22px;
   text-align:center;
@@ -910,6 +920,29 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   color:#ffd1e6;letter-spacing:.05em;
 }
 
+/* Lowercase warning pill */
+.lowercase-warn{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:8px;
+  padding:6px 11px;
+  border-radius:8px;
+  border:1px solid rgba(255,209,230,.35);
+  background:rgba(236,72,153,.14);
+  font-family:var(--m);font-size:10.5px;font-weight:700;
+  color:#ffd1e6;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.lowercase-warn .lw-icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:16px;height:16px;border-radius:5px;
+  background:rgba(236,72,153,.35);
+  font-size:10px;font-weight:900;
+  text-transform:lowercase;
+  color:#fff;
+  font-family:var(--m);
+}
+
 /* Password rows */
 .pw-section-label{
   display:flex;align-items:center;gap:8px;
@@ -935,7 +968,8 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   transition:border-color .18s,background .18s;
 }
 .pw-row:hover{border-color:var(--amber-line);background:rgba(245,165,36,.06)}
-.pw-row.pippo:hover{border-color:var(--pink-line);background:rgba(236,72,153,.06)}
+.pw-row.pippo{border-color:rgba(236,72,153,.32);background:linear-gradient(90deg,rgba(236,72,153,.08),rgba(0,0,0,.3) 55%)}
+.pw-row.pippo:hover{border-color:var(--pink-line);background:rgba(236,72,153,.1)}
 .pw-row .pw-ico{
   width:30px;height:30px;flex:none;
   border-radius:8px;
@@ -961,13 +995,33 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   user-select:all;
   line-height:1.4;
 }
-.pw-row .pw-note-tag{
-  font-family:var(--m);font-size:9.5px;font-weight:600;
-  color:var(--tx-3);letter-spacing:.04em;
+.pw-row.pippo code{
+  color:#ffd1e6;
+}
+.pw-tags{
+  display:flex;align-items:center;gap:5px;flex-wrap:wrap;
+  flex:none;
+}
+.pw-tag{
+  font-family:var(--m);font-size:9.5px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 8px;border-radius:5px;
   white-space:nowrap;
-  padding:2px 7px;border-radius:5px;
+}
+.pw-tag.archive{
+  color:var(--tx-3);
   background:rgba(255,255,255,.04);
   border:1px solid var(--line);
+}
+.pw-tag.linklock{
+  color:#f9a8d4;
+  background:var(--pink-soft);
+  border:1px solid var(--pink-line);
+}
+.pw-tag.lowercase{
+  color:#ffd1e6;
+  background:rgba(236,72,153,.2);
+  border:1px solid rgba(255,209,230,.4);
 }
 .pw-row .btn{flex:none}
 
@@ -1111,6 +1165,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   .count-pill{display:none}
   .pw-row{flex-wrap:wrap}
   .pw-row .btn{width:100%}
+  .pw-tags{width:100%}
   .pippo-callout{flex-direction:column}
 }
 
@@ -1134,7 +1189,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   <div class="brand">
     <div class="brand-mark" aria-hidden="true">PS5</div>
     <div class="brand-txt">
-      <div class="n" id="brandName">PS5 <em>OptiStore</em></div>
+      <div class="n" id="brandName">PS5 <em>Package Store</em></div>
       <div class="s">PKG Library</div>
     </div>
   </div>
@@ -1179,7 +1234,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
         <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
         <path d="M6 2v3M10 2v3M14 2v3"/>
       </svg>
-      <span>Donate Coffee</span>
+      <span>Coffee</span>
     </button>
 
     <span class="count-pill" id="countPill"><b>—</b> titles</span>
@@ -1190,7 +1245,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 
   <!-- ======================= HERO ======================= -->
   <section class="hero">
-    <h1>OptiTron PS5 <em>package library</em></h1>
+    <h1>PS5 <em>package library</em></h1>
     <p>Browse the collection, filter by category, and grab download links for every game, update, and DLC.</p>
     <div class="stats">
       <div class="stat"><span class="v b" id="statTitles">—</span><span class="k">Titles</span></div>
@@ -1207,7 +1262,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   <div class="grid" id="grid"></div>
 
   <footer class="foot">
-    <div>OptiStore5 - DLPS · standalone catalog viewer</div>
+    <div>OptiStore5 · DLPSGAME catalog viewer</div>
     <div class="foot-links">
       <button class="foot-btn pw" id="footPass" type="button" title="Archive passwords">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1279,7 +1334,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     </div>
 
     <div class="m-body">
-      <!-- Pippo warning shown only if this item has pippo links -->
       <div class="pippo-callout" id="mPippoCallout" style="display:none">
         <div class="pc-icon" aria-hidden="true">🔒</div>
         <div class="pc-body">
@@ -1288,6 +1342,10 @@ select.sel option{background:#0a0e16;color:var(--tx)}
             One or more links below go through a <b>Pippo link-lock</b> page.
             When asked for a password, enter <code>pippo</code>.
           </p>
+          <div class="lowercase-warn">
+            <span class="lw-icon">a</span>
+            All lowercase — type <code style="background:none;padding:0;color:inherit">pippo</code>, not Pippo or PIPPO
+          </div>
         </div>
       </div>
 
@@ -1329,8 +1387,12 @@ select.sel option{background:#0a0e16;color:var(--tx)}
           <h4>Pippo link-lock pages</h4>
           <p>
             Any link that goes through a <b>Pippo link-lock</b> page uses the password
-            <code>pippo</code>. This is separate from the DLPSGAME archive passwords above.
+            <code>pippo</code> — this is separate from the DLPSGAME archive passwords above.
           </p>
+          <div class="lowercase-warn">
+            <span class="lw-icon">a</span>
+            Must be entered in lowercase: <code style="background:none;padding:0;color:inherit">pippo</code>
+          </div>
         </div>
       </div>
 
@@ -1383,6 +1445,22 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 
       <div class="pw-section-label pink" style="margin-top:6px"><span class="dot"></span>Link-lock passwords</div>
       <div class="pw-list" id="passPwListLocks"></div>
+
+      <div class="pippo-callout" style="margin-top:2px">
+        <div class="pc-icon" aria-hidden="true">⚠️</div>
+        <div class="pc-body">
+          <h4>Heads up about the pippo password</h4>
+          <p>
+            The link-lock password must be entered <b>exactly</b> in lowercase:
+            <code>pippo</code>. Uppercase variants like <code>Pippo</code>, <code>PIPPO</code>,
+            or <code>Pippo</code> will be rejected.
+          </p>
+          <div class="lowercase-warn">
+            <span class="lw-icon">a</span>
+            Case-sensitive · all lowercase
+          </div>
+        </div>
+      </div>
 
       <div class="pw-note">
         <span class="ico">ℹ️</span>
@@ -1490,7 +1568,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   var ETH_ADDRESS = '0x17E1D7f8A9641749A3f6A932Df09D36FE198df86';
   var TG_URL = 'https://t.me/OptiTronOffical';
 
-  /* DLPSGAME archive passwords */
   var PASSWORDS_ARCHIVE = [
     'DLPSGAME.COM',
     'downloadgameps3.com',
@@ -1498,12 +1575,10 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     '[DLPSGAME.COM]'
   ];
 
-  /* Link-lock passwords (used on Pippo link-lock pages) */
   var PASSWORDS_LOCK = [
     'pippo'
   ];
 
-  /* Hosts that are treated as "Pippo" link-lock pages */
   var PIPPO_HOSTS = [
     'pippo', 'pippolink', 'pippo.link', 'pippo.onl', 'pippolinks',
     'pippo-links', 'pippolocker', 'pippo.co'
@@ -1596,7 +1671,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     }
   }
 
-  /* Is this a Pippo link-lock host? */
   function isPippoHost(host) {
     if (!host) return false;
     var h = host.toLowerCase();
@@ -1604,9 +1678,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       if (h.indexOf(PIPPO_HOSTS[i]) !== -1) return true;
     }
     return false;
-  }
-  function isPippoUrl(url) {
-    return isPippoHost(hostOf(url));
   }
 
   function parseDescription(desc) {
@@ -1660,16 +1731,23 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       var isPippo = pw === 'pippo';
       var cls = isPippo ? ' pippo' : '';
       var ico = isPippo ? '🔒' : '🔑';
-      var tag = '';
-      if (opts.showTag) {
-        tag = isPippo
-          ? '<span class="pw-note-tag">link-lock</span>'
-          : '<span class="pw-note-tag">archive</span>';
+
+      var tags = '';
+      if (opts.showTags) {
+        tags = '<div class="pw-tags">';
+        if (isPippo) {
+          tags += '<span class="pw-tag linklock">link-lock</span>' +
+                  '<span class="pw-tag lowercase">lowercase only</span>';
+        } else {
+          tags += '<span class="pw-tag archive">archive</span>';
+        }
+        tags += '</div>';
       }
+
       html += '<div class="pw-row' + cls + '">' +
         '<span class="pw-ico" aria-hidden="true">' + ico + '</span>' +
         '<code>' + esc(pw) + '</code>' +
-        tag +
+        tags +
         '<button class="btn ghost sm icon" type="button" data-pw="' + esc(pw) + '" title="Copy password" aria-label="Copy password">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
             '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>' +
@@ -1689,8 +1767,8 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       if (!btn) return;
       var pw = btn.getAttribute('data-pw');
       if (pw === 'pippo') {
-        copyText(pw, 'Link-lock password copied: pippo');
-        toast('Use "pippo" on Pippo link-lock pages', 'pippo');
+        copyText(pw, 'Copied "pippo" — remember, all lowercase');
+        toast('Pippo link-lock password must be entered in lowercase', 'pippo');
       } else {
         copyText(pw, 'Password copied: ' + pw);
       }
@@ -2026,7 +2104,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       D.mSource.style.display = 'none';
     }
 
-    /* Pippo callout only when the item has pippo links */
     if (D.mPippoCallout) {
       D.mPippoCallout.style.display = it.hasPippo ? '' : 'none';
     }
@@ -2082,7 +2159,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
             '</div>' +
           '</div>' +
           '<div class="link-actions">' +
-            (l.pippo ? '<span class="pippo-hint">🔒 pw: pippo</span>' : '') +
+            (l.pippo ? '<span class="pippo-hint">🔒 pw: <b>pippo</b> (lowercase)</span>' : '') +
             '<a class="btn primary sm" href="' + esc(l.url) + '" target="_blank" rel="noopener noreferrer">' +
               '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
                 '<path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>' +
@@ -2184,14 +2261,13 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       });
     }
 
-    /* Render notice modal (archive passwords only — pippo is in its own callout) */
+    /* Notice modal — archive passwords rendered without tags, pippo in callout */
     renderPasswordRows(D.noticePwList, PASSWORDS_ARCHIVE);
 
-    /* Render passwords modal — grouped */
-    renderPasswordRows(D.passPwListDlps, PASSWORDS_ARCHIVE, { showTag: true });
-    renderPasswordRows(D.passPwListLocks, PASSWORDS_LOCK, { showTag: true });
+    /* Passwords modal — grouped with tags */
+    renderPasswordRows(D.passPwListDlps, PASSWORDS_ARCHIVE, { showTags: true });
+    renderPasswordRows(D.passPwListLocks, PASSWORDS_LOCK, { showTags: true });
 
-    /* Wire copy buttons */
     wirePasswordCopy(D.noticePwList);
     wirePasswordCopy(D.passPwListDlps);
     wirePasswordCopy(D.passPwListLocks);
@@ -2486,7 +2562,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     wireDrop();
     loadFromSources();
 
-    /* Show DLPSGAME + Pippo password notice on load (once per session) */
     maybeShowNotice();
   }
 
