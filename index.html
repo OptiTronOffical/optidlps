@@ -42,7 +42,6 @@ a{color:inherit;text-decoration:none}
 ::-webkit-scrollbar-thumb:hover{background:#39445f}
 :focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 
-/* ── Topbar ─────────────────────────────────────────────────────────── */
 .topbar{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:14px;min-height:68px;padding:0 clamp(14px,2.4vw,28px);background:rgba(4,6,11,.82);backdrop-filter:saturate(170%) blur(18px);-webkit-backdrop-filter:saturate(170%) blur(18px);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:12px;flex:none;min-width:0}
 .brand-mark{width:42px;height:42px;flex:none;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--blue-2));box-shadow:0 10px 24px -10px var(--blue-glow),inset 0 1px 0 rgba(255,255,255,.35);color:#04060b;font-size:11px;font-weight:900;letter-spacing:-.02em}
@@ -79,7 +78,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .act-btn.update.spinning svg{animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* ── Catalog tabs ───────────────────────────────────────────────────── */
 .catalog-tabs{display:flex;align-items:center;gap:6px;padding:5px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(0,0,0,.36);overflow-x:auto;scrollbar-width:none;max-width:100%}
 .catalog-tabs::-webkit-scrollbar{display:none}
 .cat-tab{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:var(--r-pill);font-size:12.5px;font-weight:700;letter-spacing:-.005em;color:var(--tx-3);white-space:nowrap;cursor:pointer;transition:color .18s,background .18s,box-shadow .18s,transform .18s}
@@ -91,7 +89,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .cat-tab .tab-count{font-family:var(--m);font-size:10px;font-weight:600;padding:2px 7px;border-radius:var(--r-pill);background:rgba(255,255,255,.1);color:inherit;min-width:22px;text-align:center}
 .cat-tab.active .tab-count{background:rgba(255,255,255,.22);color:#fff}
 
-/* ── Update banner ──────────────────────────────────────────────────── */
 .update-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;margin-bottom:22px;border-radius:var(--r-lg);border:1px solid rgba(43,127,255,.28);background:linear-gradient(135deg,rgba(43,127,255,.1),rgba(43,127,255,.02));flex-wrap:wrap;animation:fadeUp .4s var(--ease)}
 .update-banner.hidden{display:none}
 .update-banner.pippo{border-color:rgba(236,72,153,.28);background:linear-gradient(135deg,rgba(236,72,153,.1),rgba(236,72,153,.02))}
@@ -117,7 +114,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .ub-refresh:active{transform:translateY(0)}
 .ub-refresh.spinning svg{animation:spin .8s linear infinite}
 
-/* ── Layout ─────────────────────────────────────────────────────────── */
 .wrap{max-width:1620px;margin:0 auto;padding:0 clamp(16px,3vw,34px) 90px}
 .hero{padding:40px 0 26px}
 .hero h1{font-size:clamp(28px,4.4vw,46px);font-weight:800;letter-spacing:-.045em;line-height:1.06;max-width:820px}
@@ -132,7 +128,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .stat .v.b{background:linear-gradient(135deg,var(--blue-2),#7dd3fc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .stat .k{font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3)}
 
-/* ── Chipbar ────────────────────────────────────────────────────────── */
 .chipbar{position:sticky;top:68px;z-index:150;display:flex;align-items:center;gap:8px;padding:14px 0;margin-bottom:8px;overflow-x:auto;scrollbar-width:none;background:linear-gradient(180deg,rgba(4,6,11,.95) 55%,rgba(4,6,11,0));-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .chipbar::-webkit-scrollbar{display:none}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 17px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;font-weight:700;letter-spacing:.01em;color:var(--tx-3);white-space:nowrap;cursor:pointer;user-select:none;transition:color .18s,border-color .18s,background .18s,transform .18s,box-shadow .18s}
@@ -148,7 +143,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .chip.on[data-cat="theme"]{background:linear-gradient(135deg,var(--pink),#be185d);box-shadow:0 10px 22px -12px rgba(236,72,153,.6),inset 0 1px 0 rgba(255,255,255,.28)}
 .chip.on[data-cat="demo"]{background:linear-gradient(135deg,var(--gray),#475569);box-shadow:0 10px 22px -12px rgba(100,116,139,.6),inset 0 1px 0 rgba(255,255,255,.28)}
 
-/* ── Grid & cards ───────────────────────────────────────────────────── */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:22px;padding-top:16px}
 .card{position:relative;display:flex;flex-direction:column;border-radius:var(--r-xl);border:1px solid var(--line);background:var(--card);overflow:hidden;cursor:pointer;content-visibility:auto;contain-intrinsic-size:auto 340px;contain:layout style paint;box-shadow:var(--shadow-bubble);transition:transform .32s var(--ease),border-color .22s,box-shadow .32s}
 .card:hover{transform:translate3d(0,-8px,0);border-color:rgba(43,127,255,.55);box-shadow:0 32px 56px -28px rgba(43,127,255,.6),0 0 0 1px rgba(43,127,255,.16)}
@@ -169,6 +163,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .badge.cat-demo{color:#cbd5e1;border-color:var(--gray-line);background:rgba(18,22,30,.86)}
 .badge.cat-other{color:#c4b5fd;border-color:rgba(124,92,255,.45);background:rgba(16,12,40,.86)}
 .badge.region{color:#a5f3fc;border-color:rgba(0,194,255,.45);background:rgba(4,26,38,.86)}
+.badge.bundle{color:#c4b5fd;border-color:rgba(124,92,255,.5);background:rgba(22,14,48,.9)}
 .badge.links{color:#e2e8f0;border-color:rgba(255,255,255,.16);background:rgba(6,9,14,.86);margin-left:auto}
 .meta{display:flex;flex-direction:column;gap:9px;flex:1;padding:15px 16px 16px}
 .meta h3{font-size:13px;font-weight:650;line-height:1.4;letter-spacing:-.005em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
@@ -176,7 +171,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .meta .row .tid{color:var(--tx-3)}
 .meta .row .ver{color:var(--tx-2);padding:3px 9px;border-radius:var(--r-pill);background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:9.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:96px}
 
-/* ── Skeleton ───────────────────────────────────────────────────────── */
 .sk{border-radius:var(--r-xl);border:1px solid var(--line);background:var(--card);overflow:hidden;box-shadow:var(--shadow-bubble)}
 .sk .sk-c{aspect-ratio:1/1;background:linear-gradient(100deg,#0b1018 30%,#151d2c 50%,#0b1018 70%);background-size:220% 100%;animation:shim 1.4s infinite linear}
 .sk .sk-l{height:11px;margin:15px 16px 0;border-radius:6px;background:linear-gradient(100deg,#0b1018 30%,#151d2c 50%,#0b1018 70%);background-size:220% 100%;animation:shim 1.4s infinite linear}
@@ -188,7 +182,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .state p{max-width:600px;margin:0 auto;font-size:13px;line-height:1.65;color:var(--tx-3)}
 .state .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
 
-/* ── Diagnostics ────────────────────────────────────────────────────── */
 .diag{max-width:680px;margin:24px auto 0;text-align:left;border-radius:var(--r-lg);border:1px solid var(--line);background:rgba(0,0,0,.32);overflow:hidden}
 .diag-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
 .diag-head h4{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3)}
@@ -210,7 +203,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .diag-note code{font-family:var(--m);font-size:11px;background:rgba(0,0,0,.4);padding:2px 7px;border-radius:5px;color:#fcd34d}
 .diag-note a{color:#7cc8f0;font-weight:700;text-decoration:underline}
 
-/* ── Buttons ────────────────────────────────────────────────────────── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:var(--r-pill);border:1px solid transparent;font-size:13px;font-weight:700;line-height:1;color:var(--tx);white-space:nowrap;cursor:pointer;transition:filter .18s,transform .18s,background .18s,border-color .18s,color .18s,box-shadow .18s}
 .btn svg{width:14px;height:14px;flex:none}
 .btn.primary{background:linear-gradient(135deg,var(--blue),#1e5fd9);color:#fff;box-shadow:0 12px 28px -14px var(--blue-glow),inset 0 1px 0 rgba(255,255,255,.25)}
@@ -227,7 +219,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .btn.sm svg{width:12px;height:12px}
 .btn.icon{padding:9px 12px}
 
-/* ── Overlays / modals ──────────────────────────────────────────────── */
 .overlay{display:none;position:fixed;inset:0;z-index:900;padding:26px 16px;overflow-y:auto;overscroll-behavior:contain;background:rgba(2,3,7,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .overlay.open{display:flex;align-items:flex-start;justify-content:center}
 .modal{position:relative;width:100%;max-width:960px;margin:auto;border-radius:var(--r-xl);border:1px solid var(--line);background:linear-gradient(180deg,var(--surface-2),var(--surface));box-shadow:var(--shadow-lg);overflow:hidden;animation:pop .28s var(--ease)}
@@ -263,23 +254,48 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .spec .v.mono{font-family:var(--m);font-size:12.5px;letter-spacing:.02em}
 .spec.hl{border-color:var(--amber-line);background:var(--amber-soft)}
 .spec.hl .v{color:#fcd34d;font-family:var(--m);letter-spacing:.04em}
+
+/* Included-items list (grouped PFS releases) */
+.includes{display:flex;flex-direction:column;gap:8px}
+.inc-row{display:flex;align-items:center;gap:12px;padding:12px 15px;border-radius:var(--r-md);border:1px solid var(--line);background:rgba(0,0,0,.24)}
+.inc-ico{width:34px;height:34px;flex:none;border-radius:11px;display:grid;place-items:center;font-size:15px;line-height:1;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.inc-ico.g{color:#93c5fd;border-color:rgba(43,127,255,.4);background:var(--blue-soft)}
+.inc-ico.p{color:#d8b4fe;border-color:var(--purple-line);background:var(--purple-soft)}
+.inc-ico.a{color:#fcd34d;border-color:var(--amber-line);background:var(--amber-soft)}
+.inc-ico.s{color:#cbd5e1;border-color:var(--gray-line);background:var(--gray-soft)}
+.inc-body{flex:1;min-width:0}
+.inc-name{font-size:12.5px;font-weight:700;color:var(--tx);letter-spacing:-.005em}
+.inc-desc{font-family:var(--m);font-size:10.5px;color:var(--tx-3);letter-spacing:.02em;margin-top:3px}
+
 .links{display:flex;flex-direction:column;gap:10px}
 .link-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;border-radius:var(--r-lg);border:1px solid var(--line);border-left:4px solid var(--blue);background:rgba(0,0,0,.26);transition:background .18s,border-color .18s,transform .18s}
 .link-row:hover{background:rgba(255,255,255,.028);border-color:var(--line-2);transform:translateX(3px)}
+.link-row.cat-game{border-left-color:var(--blue)}
+.link-row.cat-dlc{border-left-color:var(--purple)}
+.link-row.cat-update{border-left-color:var(--amber)}
+.link-row.cat-app{border-left-color:var(--green)}
+.link-row.cat-theme{border-left-color:var(--pink)}
+.link-row.cat-demo{border-left-color:var(--gray)}
+.link-row.pippo{border-left-color:var(--pink);background:linear-gradient(90deg,rgba(236,72,153,.08),rgba(0,0,0,.26) 45%)}
 .link-main{flex:1 1 220px;min-width:0;display:flex;align-items:center;gap:13px}
 .link-fav{width:38px;height:38px;flex:none;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.4);display:grid;place-items:center;overflow:hidden}
 .link-fav img{width:20px;height:20px;object-fit:contain}
 .link-fav .fb{font-family:var(--m);font-size:11px;font-weight:800;color:var(--tx-3);text-transform:uppercase}
-.link-txt{min-width:0;display:flex;flex-direction:column;gap:3px}
+.link-txt{min-width:0;display:flex;flex-direction:column;gap:4px}
 .link-name{font-size:13.5px;font-weight:650;color:var(--tx);word-break:break-word;line-height:1.35}
+.link-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.link-tag{font-family:var(--m);font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(0,0,0,.4);color:var(--tx-2);white-space:nowrap}
+.link-tag.g{color:#93c5fd;border-color:rgba(43,127,255,.4);background:var(--blue-soft)}
+.link-tag.p{color:#d8b4fe;border-color:var(--purple-line);background:var(--purple-soft)}
+.link-tag.a{color:#fcd34d;border-color:var(--amber-line);background:var(--amber-soft)}
+.link-tag.k{color:#f9a8d4;border-color:var(--pink-line);background:var(--pink-soft)}
+.link-tag.s{color:#cbd5e1;border-color:var(--gray-line);background:var(--gray-soft)}
+.link-tag.v{color:#a5f3fc;border-color:rgba(0,194,255,.35);background:rgba(0,194,255,.08);text-transform:none;letter-spacing:.03em}
 .link-host{font-family:var(--m);font-size:10.5px;font-weight:500;color:var(--tx-3);letter-spacing:.02em;word-break:break-all}
 .link-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.link-row.pippo{border-left-color:var(--pink);background:linear-gradient(90deg,rgba(236,72,153,.08),rgba(0,0,0,.26) 45%)}
-.link-row.pippo .link-host{color:#f9a8d4}
 .pippo-hint{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:var(--r-pill);border:1px solid var(--pink-line);background:var(--pink-soft);font-family:var(--m);font-size:9.5px;font-weight:700;color:#f9a8d4;letter-spacing:.05em;white-space:nowrap}
 .pippo-hint b{font-weight:700;text-transform:none;letter-spacing:.02em;color:#ffd1e6}
 
-/* ── Donate ─────────────────────────────────────────────────────────── */
 .donate-head{padding:32px 26px 24px;border-bottom:1px solid var(--line);text-align:center;background:linear-gradient(135deg,rgba(245,181,68,.14),rgba(245,181,68,.03))}
 .donate-head .coffee-mark{width:64px;height:64px;margin:0 auto 16px;border-radius:20px;display:grid;place-items:center;font-size:29px;background:linear-gradient(135deg,var(--coffee),var(--coffee-2));box-shadow:0 16px 34px -14px rgba(245,181,68,.7),inset 0 1px 0 rgba(255,255,255,.3)}
 .donate-head h2{font-size:21px;font-weight:800;letter-spacing:-.02em}
@@ -296,7 +312,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .donate-actions{display:flex;gap:9px;flex-wrap:wrap}
 .donate-actions .btn{flex:1}
 
-/* ── Notice / passwords ─────────────────────────────────────────────── */
 .notice-head{padding:32px 26px 24px;text-align:center;border-bottom:1px solid var(--line);background:linear-gradient(135deg,rgba(245,165,36,.16),rgba(245,165,36,.03))}
 .notice-head .notice-mark{width:64px;height:64px;margin:0 auto 16px;border-radius:20px;display:grid;place-items:center;font-size:28px;background:linear-gradient(135deg,var(--amber),#d97706);box-shadow:0 16px 34px -14px rgba(245,165,36,.7),inset 0 1px 0 rgba(255,255,255,.3)}
 .notice-head h2{font-size:21px;font-weight:800;letter-spacing:-.02em}
@@ -336,7 +351,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .pw-note .ico{flex:none;font-size:15px;line-height:1}
 .pw-note b{color:var(--tx-2);font-weight:700}
 
-/* ── Toasts ─────────────────────────────────────────────────────────── */
 #toasts{position:fixed;right:20px;bottom:20px;z-index:2000;display:flex;flex-direction:column;gap:12px;max-width:min(420px,calc(100vw - 40px));pointer-events:none}
 .toast{display:flex;align-items:flex-start;gap:11px;padding:15px 18px;border-radius:var(--r-lg);border:1px solid var(--line);background:rgba(12,17,26,.97);box-shadow:0 18px 40px -18px rgba(0,0,0,.8);font-size:13px;font-weight:500;line-height:1.5;pointer-events:auto;animation:slideIn .28s var(--ease)}
 .toast.out{animation:slideOut .22s ease forwards}
@@ -362,7 +376,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .toast .toast-line .tl-delta.down{color:#fda4af}
 .toast .toast-line .tl-delta.same{opacity:.55}
 
-/* ── Drop overlay ───────────────────────────────────────────────────── */
 .drop-overlay{position:fixed;inset:0;z-index:1500;display:none;align-items:center;justify-content:center;background:rgba(3,5,10,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);pointer-events:none}
 .drop-overlay.on{display:flex}
 .drop-inner{padding:60px 70px;border-radius:var(--r-xl);border:2px dashed var(--blue);background:var(--blue-soft);text-align:center;animation:pop .24s var(--ease)}
@@ -370,7 +383,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .drop-inner h3{font-size:18px;font-weight:800;margin-bottom:7px}
 .drop-inner p{font-size:13px;color:var(--tx-2)}
 
-/* ── Footer ─────────────────────────────────────────────────────────── */
 .foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);font-size:12px;color:var(--tx-3)}
 .foot code{font-family:var(--m);font-size:11.5px;background:rgba(0,0,0,.36);padding:4px 10px;border-radius:var(--r-pill);color:#93c5fd}
 .foot-links{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
@@ -383,7 +395,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 .foot-btn.pw{color:#fcd34d}
 .foot-btn.pw:hover{color:#ffe6b3}
 
-/* ── Responsive ─────────────────────────────────────────────────────── */
 @media (max-width:1300px){.act-btn span{display:none}.act-btn{padding:0 13px}}
 @media (max-width:1000px){.brand-txt .n{max-width:150px}}
 @media (max-width:820px){
@@ -448,9 +459,9 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       <span class="cat-name">DLPSGAME</span>
       <span class="tab-count" id="tabCountDlps">—</span>
     </button>
-    <button class="cat-tab" data-cat="pippo" type="button" title="Pippo catalog">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-      <span class="cat-name">Pippo</span>
+    <button class="cat-tab" data-cat="pippo" type="button" title=".exfat catalog">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h2M12 13h2M16 13h1M8 17h6"/></svg>
+      <span class="cat-name">.exfat</span>
       <span class="tab-count" id="tabCountPippo">—</span>
     </button>
     <button class="cat-tab" data-cat="pfs" type="button" title="PFS catalog">
@@ -593,6 +604,10 @@ select.sel option{background:#0a0e16;color:var(--tx)}
           <div class="lowercase-warn"><span class="lw-icon">a</span>All lowercase — type <code style="background:none;padding:0;color:inherit">pippo</code>, not Pippo or PIPPO</div>
         </div>
       </div>
+      <section id="mIncludesSection" style="display:none">
+        <div class="sec-title">Included in this release</div>
+        <div class="includes" id="mIncludes"></div>
+      </section>
       <section id="mSpecsSection" style="display:none">
         <div class="sec-title">Release details</div>
         <div class="specs" id="mSpecs"></div>
@@ -735,7 +750,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
      ===================================================================== */
   var CATALOGS = {
     dlps:  { id: 'dlps',  label: 'DLPSGAME', url: 'dlps.json' },
-    pippo: { id: 'pippo', label: 'Pippo',    url: 'pippo.json' },
+    pippo: { id: 'pippo', label: '.exfat',   url: 'pippo.json' },
     pfs:   { id: 'pfs',   label: 'PFS',      url: 'pfs.json' }
   };
 
@@ -760,13 +775,14 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     game:{label:'Game',cls:'cat-game'},dlc:{label:'DLC',cls:'cat-dlc'},update:{label:'Update',cls:'cat-update'},
     app:{label:'App',cls:'cat-app'},theme:{label:'Theme',cls:'cat-theme'},demo:{label:'Demo',cls:'cat-demo'}
   };
+  var CATEGORY_ICON = { game:'🎮', dlc:'📦', update:'⬆️', app:'📱', theme:'🎨', demo:'🧪' };
 
   var D = {};
   function cacheDom() {
     var ids = ['brandName','search','sort','countPill','statTitles','statGames','statDlc','statLinks','chipbar','grid','footSource',
       'catalogTabs','tabCountDlps','tabCountPippo','tabCountPfs','heroTitle','heroSub','updateBtn','updateBtnText',
       'updateBanner','ubDot','ubLabel','ubTime','ubSep','ubSource','ubBadge','ubRefresh',
-      'modal','modalClose','mCover','mTitle','mSub','mChips','mCopyAll','mSource','mSpecsSection','mSpecs','mLinkCount','mLinks',
+      'modal','modalClose','mCover','mTitle','mSub','mChips','mCopyAll','mSource','mIncludesSection','mIncludes','mSpecsSection','mSpecs','mLinkCount','mLinks',
       'mPasswords','mPippoCallout','noticeModal','noticePwList','noticeGotIt','noticeMore',
       'passModal','passPwListDlps','passPwListLocks','passCopyAll','passBtn','footPass',
       'donateModal','ethAddress','copyEth','coffeeBtn','footCoffee','toasts','dropOverlay'];
@@ -842,8 +858,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     for (var i = 0; i < parts.length; i++) {
       var line = parts[i].trim(); if (!line) continue;
       var m = line.match(/^([^:]+):\s*(.*)$/);
-      /* Only treat it as key/value when the value is short enough — long blobs
-         (like the PFS "Genre: …" mega-line) fall through to the notes list. */
       if (m && m[2].length <= 300) {
         var key = m[1].toLowerCase().trim();
         var val = m[2].trim();
@@ -863,6 +877,15 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   function categoryMeta(cat) {
     var c = String(cat || '').toLowerCase().trim();
     return CATEGORY_META[c] || { label: c ? (c.charAt(0).toUpperCase()+c.slice(1)) : 'Other', cls: 'cat-other' };
+  }
+  function catChipClass(cat) {
+    return cat === 'game' ? 'b' : cat === 'dlc' ? 'p' : cat === 'update' ? 'a' : cat === 'app' ? 'g' : cat === 'theme' ? 'k' : cat === 'demo' ? 's' : 's';
+  }
+  function catLinkClass(cat) {
+    return 'cat-' + (cat || 'other');
+  }
+  function catIcon(cat) {
+    return CATEGORY_ICON[String(cat || '').toLowerCase()] || '📦';
   }
 
   function rafDebounce(fn, delay) {
@@ -890,7 +913,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     return null;
   }
 
-  /* Fallback for catalogs (like PFS) that only carry per-package "Updated:" dates. */
   function extractTimestampFromItems(items) {
     if (!items || !items.length) return null;
     var max = null;
@@ -934,8 +956,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     var rel = relTime(d);
     return rel ? abs + ' (' + rel + ')' : abs;
   }
-
-  /* Human-readable byte size — used for PFS `sizeBytes` values. */
   function formatBytes(n) {
     var num = Number(n);
     if (!isFinite(num) || num <= 0) return '';
@@ -1055,25 +1075,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 
   /* =====================================================================
      NORMALIZE — handles dlps.json / pippo.json / pfs.json formats
-
-     PFS shape:
-     {
-       "name": "PFS Catalog",
-       "version": 1,
-       "packages": [
-         {
-           "titleId": "PPSA29035",
-           "title": "Forgive Me Father 2",
-           "downloadLinks": [{ "name": "Download", "url": "https://…" }],
-           "version": "2.10",
-           "category": "game",
-           "description": "Genre: …\nRegion: EUR\nFirmware: 10.xx+, …\nUpdated: 2026-10-04T21:53:30.227Z",
-           "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
-           "sizeBytes": 8912057139,
-           "posterUrl": "https://cdn.prosperopatches.com/…/icon0.webp"
-         }
-       ]
-     }
      ===================================================================== */
   function normalize(raw) {
     if (!raw) return [];
@@ -1102,7 +1103,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       if (Array.isArray(m.downloadLinks)) {
         for (var li = 0; li < m.downloadLinks.length; li++) {
           var l = m.downloadLinks[li]; if (!l) continue;
-          /* downloadLinks entries can be objects {name,url} or plain strings. */
           var url = typeof l === 'string' ? l : (l.url || l.link || '');
           if (!url) continue;
           var host = hostOf(url);
@@ -1149,16 +1149,128 @@ select.sel option{background:#0a0e16;color:var(--tx)}
         extra: parsed.extra,
         _sizeRaw: size,
         _sizeLabel: formatBytes(size) || (size !== '' && size != null ? String(size) : ''),
-        _search: (title + ' ' + titleId).toLowerCase()
+        _search: (title + ' ' + titleId).toLowerCase(),
+        _grouped: false,
+        _groupCount: 1,
+        _entries: []
       });
     }
     return out;
   }
 
+  /* =====================================================================
+     GROUPING — bundles entries that share a Title ID into one card.
+     Applied only to the PFS catalog, where the same game can appear as
+     separate base-game / update / DLC rows.
+     ===================================================================== */
+  function groupByTitleId(items) {
+    var map = {}; var order = [];
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i];
+      var key = String(it.titleId || it.title || '').toLowerCase().trim();
+      if (!key) key = '__solo_' + i;
+
+      var g = map[key];
+      if (!g) {
+        g = {
+          title: it.title,
+          titleId: it.titleId,
+          category: it.category,
+          categories: [],
+          version: it.version,
+          versions: [],
+          posterUrl: it.posterUrl,
+          description: it.description,
+          downloadSource: it.downloadSource,
+          links: [],
+          hasPippo: false,
+          region: it.region,
+          password: it.password,
+          note: it.note,
+          contributor: it.contributor,
+          firmware: it.firmware,
+          genre: it.genre,
+          updatedAt: it.updatedAt,
+          extra: it.extra.slice(),
+          _sizeRaw: 0,
+          _sizeLabel: '',
+          _search: it._search,
+          _grouped: false,
+          _groupCount: 0,
+          _entries: []
+        };
+        map[key] = g; order.push(g);
+      }
+
+      g._groupCount++;
+      g._entries.push({
+        category: it.category,
+        version: it.version,
+        linkCount: it.links.length,
+        size: it._sizeLabel || '',
+        sizeRaw: Number(it._sizeRaw) || 0
+      });
+
+      if (it.category && g.categories.indexOf(it.category) === -1) g.categories.push(it.category);
+      if (it.version && g.versions.indexOf(it.version) === -1) g.versions.push(it.version);
+
+      for (var j = 0; j < it.links.length; j++) {
+        var l = it.links[j];
+        g.links.push({
+          name: l.name, url: l.url, host: l.host, pippo: l.pippo,
+          category: it.category, version: it.version
+        });
+        if (l.pippo) g.hasPippo = true;
+      }
+
+      if (!g.posterUrl && it.posterUrl) g.posterUrl = it.posterUrl;
+      if (!g.region && it.region) g.region = it.region;
+      if (!g.firmware && it.firmware) g.firmware = it.firmware;
+      if (!g.genre && it.genre) g.genre = it.genre;
+      if (!g.note && it.note) g.note = it.note;
+      if (!g.contributor && it.contributor) g.contributor = it.contributor;
+
+      var sz = Number(it._sizeRaw);
+      if (isFinite(sz) && sz > 0) g._sizeRaw += sz;
+
+      if (it.updatedAt) {
+        var cur = g.updatedAt ? new Date(g.updatedAt) : null;
+        var cand = new Date(it.updatedAt);
+        if (!cur || isNaN(cur.getTime()) || (!isNaN(cand.getTime()) && cand > cur)) g.updatedAt = it.updatedAt;
+      }
+
+      for (var e = 0; e < it.extra.length; e++) {
+        var ex = it.extra[e];
+        var dup = false;
+        for (var ge = 0; ge < g.extra.length; ge++) {
+          if (g.extra[ge].k === ex.k && g.extra[ge].v === ex.v) { dup = true; break; }
+        }
+        if (!dup) g.extra.push(ex);
+      }
+    }
+
+    var catOrder = ['game','update','dlc','app','theme','demo'];
+    for (var k = 0; k < order.length; k++) {
+      var gg = order[k];
+      if (!gg.categories.length && gg.category) gg.categories.push(gg.category);
+      if (!gg.versions.length && gg.version) gg.versions.push(gg.version);
+      if (gg._sizeRaw > 0) gg._sizeLabel = formatBytes(gg._sizeRaw);
+      gg.categories.sort(function(a, b) {
+        var ai = catOrder.indexOf(a); if (ai === -1) ai = 99;
+        var bi = catOrder.indexOf(b); if (bi === -1) bi = 99;
+        return ai - bi;
+      });
+      gg.category = gg.categories[0] || gg.category;
+      gg.version = gg.versions[0] || gg.version;
+      gg._grouped = gg._groupCount > 1;
+    }
+    return order;
+  }
+
   function finalizeCatalog(id, data, lastModified, sourceKind) {
     var items = normalize(data);
-    /* Prefer a top-level timestamp; otherwise fall back to the newest
-       per-package "Updated:" value (PFS catalogs only expose it there). */
+    /* PFS ships one row per package variant — bundle them into one card per game. */
+    if (id === 'pfs') items = groupByTitleId(items);
     var ts = extractTimestamp(data) || lastModified || extractTimestampFromItems(items) || null;
     var c = state.catalogs[id];
     c.items = items; c.loaded = true; c.error = null;
@@ -1171,8 +1283,9 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     var items = active().items;
     var games = 0, dlc = 0, links = 0;
     for (var i = 0; i < items.length; i++) {
-      if (items[i].category === 'game') games++;
-      else if (items[i].category === 'dlc') dlc++;
+      var cats = items[i].categories || [items[i].category];
+      if (cats.indexOf('game') !== -1) games++;
+      if (cats.indexOf('dlc') !== -1) dlc++;
       links += items[i].links.length;
     }
     D.statTitles.textContent = items.length.toLocaleString();
@@ -1184,7 +1297,13 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   function buildChips() {
     var items = active().items;
     var counts = {};
-    for (var i = 0; i < items.length; i++) { var c = items[i].category || 'other'; counts[c] = (counts[c]||0) + 1; }
+    for (var i = 0; i < items.length; i++) {
+      var cats = items[i].categories || [items[i].category || 'other'];
+      for (var ci = 0; ci < cats.length; ci++) {
+        var c = cats[ci] || 'other';
+        counts[c] = (counts[c] || 0) + 1;
+      }
+    }
     var order = ['game','dlc','update','app','theme','demo'];
     var used = Object.keys(counts).sort(function (a, b) {
       var ai = order.indexOf(a); if (ai === -1) ai = 99;
@@ -1208,7 +1327,10 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     for (var i = 0; i < items.length; i++) {
       var it = items[i];
       if (q && it._search.indexOf(q) < 0) continue;
-      if (cat !== 'all' && it.category !== cat) continue;
+      if (cat !== 'all') {
+        var cats = it.categories || [it.category];
+        if (cats.indexOf(cat) === -1) continue;
+      }
       out.push(it);
     }
     var s = f.sort;
@@ -1237,15 +1359,20 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       var meta = categoryMeta(it.category);
       var initial = (it.title || '?').trim().charAt(0).toUpperCase() || '?';
       var linkCount = it.links.length;
+      var badges = '<span class="badge ' + meta.cls + '">' + esc(meta.label) + '</span>';
+      if (it.categories && it.categories.length > 1) {
+        var extraCats = it.categories.slice(1).map(function(c){return categoryMeta(c).label;}).join(' + ');
+        badges += '<span class="badge bundle">+' + esc(extraCats) + '</span>';
+      }
+      if (it.region) badges += '<span class="badge region">' + esc(it.region) + '</span>';
+      if (it._grouped) badges += '<span class="badge bundle">' + it._groupCount + ' items</span>';
+      if (linkCount) badges += '<span class="badge links">' + linkCount + ' link' + (linkCount === 1 ? '' : 's') + '</span>';
+
       html += '<article class="card" data-idx="' + i + '" tabindex="0" role="button" aria-label="' + esc(it.title) + '">' +
         '<div class="cover">' +
           '<div class="ph" aria-hidden="true">' + esc(initial) + '</div>' +
           (it.posterUrl ? '<img class="cover-img" src="' + esc(it.posterUrl) + '" alt="" loading="lazy" decoding="async" fetchpriority="low">' : '') +
-          '<div class="badges">' +
-            '<span class="badge ' + meta.cls + '">' + esc(meta.label) + '</span>' +
-            (it.region ? '<span class="badge region">' + esc(it.region) + '</span>' : '') +
-            (linkCount ? '<span class="badge links">' + linkCount + ' link' + (linkCount === 1 ? '' : 's') + '</span>' : '') +
-          '</div>' +
+          '<div class="badges">' + badges + '</div>' +
         '</div>' +
         '<div class="meta"><h3>' + esc(it.title) + '</h3>' +
           '<div class="row"><span class="tid">' + esc(it.titleId || '—') + '</span>' +
@@ -1295,15 +1422,20 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       wrap.appendChild(img);
     }
     D.mTitle.textContent = it.title;
-    D.mSub.textContent = (it.titleId || '—') + (it.version ? ' · ' + it.version : '');
+    D.mSub.textContent = (it.titleId || '—') + (it.version ? ' · v' + it.version : '');
 
     var meta = categoryMeta(it.category);
     var chips = [];
-    var catCls = it.category === 'game' ? 'b' : it.category === 'dlc' ? 'p' : it.category === 'update' ? 'a' : it.category === 'app' ? 'g' : it.category === 'theme' ? 'k' : 's';
-    chips.push({ t: meta.label, c: catCls });
+    var cats = it.categories || [it.category];
+    for (var ci = 0; ci < cats.length; ci++) {
+      var c = cats[ci];
+      chips.push({ t: categoryMeta(c).label, c: catChipClass(c) });
+    }
     if (it.region) chips.push({ t: it.region, c: 'b' });
-    if (it.version) chips.push({ t: it.version });
+    if (it.versions && it.versions.length > 1) chips.push({ t: it.versions.length + ' versions' });
+    else if (it.version) chips.push({ t: 'v' + it.version });
     chips.push({ t: it.links.length + ' link' + (it.links.length === 1 ? '' : 's'), c: 'g' });
+    if (it._grouped) chips.push({ t: it._groupCount + ' items', c: 'k' });
     if (it.hasPippo) chips.push({ t: 'Pippo link-lock', c: 'k' });
     var chipsHtml = '';
     for (var i = 0; i < chips.length; i++) chipsHtml += '<span class="m-chip ' + (chips[i].c||'') + '">' + esc(chips[i].t) + '</span>';
@@ -1314,11 +1446,43 @@ select.sel option{background:#0a0e16;color:var(--tx)}
 
     if (D.mPippoCallout) D.mPippoCallout.style.display = it.hasPippo ? '' : 'none';
 
+    /* ---- "Included in this release" block (grouped PFS rows) ---- */
+    if (D.mIncludesSection && D.mIncludes) {
+      if (it._grouped && it._entries && it._entries.length) {
+        var incHtml = '';
+        for (var ei = 0; ei < it._entries.length; ei++) {
+          var en = it._entries[ei];
+          var em = categoryMeta(en.category);
+          var eCls = catChipClass(en.category);
+          var icon = catIcon(en.category);
+          var bits = [];
+          if (en.version) bits.push('v' + en.version);
+          if (en.linkCount) bits.push(en.linkCount + ' link' + (en.linkCount === 1 ? '' : 's'));
+          if (en.size) bits.push(en.size);
+          incHtml += '<div class="inc-row">' +
+            '<span class="inc-ico ' + eCls + '" aria-hidden="true">' + icon + '</span>' +
+            '<div class="inc-body">' +
+              '<div class="inc-name">' + esc(em.label) + '</div>' +
+              '<div class="inc-desc">' + esc(bits.join(' · ') || 'included') + '</div>' +
+            '</div>' +
+          '</div>';
+        }
+        D.mIncludes.innerHTML = incHtml;
+        D.mIncludesSection.style.display = '';
+      } else {
+        D.mIncludesSection.style.display = 'none';
+      }
+    }
+
     var specs = [];
+    if (it.categories && it.categories.length > 1) {
+      specs.push({ k: 'Contains', v: it.categories.map(function(c){return categoryMeta(c).label;}).join(' · ') });
+    }
     if (it.region) specs.push({ k: 'Region', v: it.region });
     if (it.firmware) specs.push({ k: 'Firmware', v: it.firmware });
     if (it.genre) specs.push({ k: 'Genre', v: it.genre, wide: it.genre.length > 160 });
-    if (it._sizeLabel) specs.push({ k: 'Size', v: it._sizeLabel });
+    if (it._sizeLabel) specs.push({ k: (it._grouped ? 'Total size' : 'Size'), v: it._sizeLabel });
+    if (it.versions && it.versions.length > 1) specs.push({ k: 'Versions', v: it.versions.join(', '), mono: true });
     if (it.password) specs.push({ k: 'Password', v: it.password, hl: true });
     if (it.contributor) specs.push({ k: 'Contributor', v: it.contributor });
     if (it.note) specs.push({ k: 'Release note', v: it.note, wide: String(it.note).length > 160 });
@@ -1336,7 +1500,8 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       var sp = '';
       for (var s = 0; s < specs.length; s++) {
         var cls = 'spec' + (specs[s].hl ? ' hl' : '') + (specs[s].wide ? ' wide' : '');
-        sp += '<div class="' + cls + '"><div class="k">' + esc(specs[s].k) + '</div><div class="v' + (specs[s].hl ? ' mono' : '') + '">' + esc(specs[s].v) + '</div></div>';
+        var vcls = 'v' + (specs[s].hl ? ' mono' : '') + (specs[s].mono ? ' mono' : '');
+        sp += '<div class="' + cls + '"><div class="k">' + esc(specs[s].k) + '</div><div class="' + vcls + '">' + esc(specs[s].v) + '</div></div>';
       }
       D.mSpecs.innerHTML = sp;
     } else D.mSpecsSection.style.display = 'none';
@@ -1349,13 +1514,23 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       for (var li = 0; li < it.links.length; li++) {
         var l = it.links[li];
         var fb = (l.host || '?').charAt(0).toUpperCase();
-        lh += '<div class="link-row' + (l.pippo ? ' pippo' : '') + '">' +
+        var rowCls = 'link-row';
+        if (l.pippo) rowCls += ' pippo';
+        else if (l.category) rowCls += ' ' + catLinkClass(l.category);
+
+        var metaHtml = '';
+        if (l.category) metaHtml += '<span class="link-tag ' + catChipClass(l.category) + '">' + esc(categoryMeta(l.category).label) + '</span>';
+        if (l.version) metaHtml += '<span class="link-tag v">v' + esc(l.version) + '</span>';
+        if (l.host) metaHtml += '<span class="link-host">' + esc(l.host) + '</span>';
+
+        lh += '<div class="' + rowCls + '">' +
           '<div class="link-main">' +
             '<div class="link-fav">' +
               (l.host ? '<img src="https://www.google.com/s2/favicons?domain=' + encodeURIComponent(l.host) + '&sz=64" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\';"><span class="fb" style="display:none">' + esc(fb) + '</span>' : '<span class="fb">' + esc(fb) + '</span>') +
             '</div>' +
             '<div class="link-txt"><div class="link-name">' + esc(l.name) + '</div>' +
-              (l.host ? '<div class="link-host">' + esc(l.host) + '</div>' : '') + '</div>' +
+              '<div class="link-meta">' + metaHtml + '</div>' +
+            '</div>' +
           '</div>' +
           '<div class="link-actions">' +
             (l.pippo ? '<span class="pippo-hint">🔒 pw: <b>pippo</b> (lowercase)</span>' : '') +
@@ -1436,8 +1611,8 @@ select.sel option{background:#0a0e16;color:var(--tx)}
   function updateHeroForCatalog(id) {
     var titles = {
       dlps:  { h: 'PS5 <em>package library</em>', p: 'Browse the collection, filter by category, and grab download links for every game, update, and DLC.' },
-      pippo: { h: 'Pippo <em>catalog</em>', p: 'Pippo link-lock titles and packages. Use the password <b>pippo</b> (lowercase) on link-lock pages.' },
-      pfs:   { h: 'PFS <em>catalog</em>', p: 'PFS-sourced packages and updates. Browse, filter, and grab download links.' }
+      pippo: { h: '.exfat <em>catalog</em>', p: 'Titles hosted on .exfat. Some links go through a Pippo link-lock page — use the password <b>pippo</b> (lowercase) when prompted.' },
+      pfs:   { h: 'PFS <em>catalog</em>', p: 'PFS-sourced packages and updates, bundled per game. Every category, version, and link for a title is shown together on a single card.' }
     };
     var t = titles[id] || titles.dlps;
     D.heroTitle.innerHTML = t.h;
@@ -1495,9 +1670,6 @@ select.sel option{background:#0a0e16;color:var(--tx)}
     if (pb) pb.addEventListener('click', openPasswords);
   }
 
-  /* =====================================================================
-     FETCH — local files, same origin, no CORS needed
-     ===================================================================== */
   function fetchCatalog(id) {
     return new Promise(function (resolve, reject) {
       var meta = CATALOGS[id];
@@ -1808,6 +1980,7 @@ select.sel option{background:#0a0e16;color:var(--tx)}
       try { raw = JSON.parse(reader.result); }
       catch (err) { toast('Invalid JSON: ' + err.message,'err'); return; }
       var items = normalize(raw);
+      if (state.currentCatalogId === 'pfs') items = groupByTitleId(items);
       var ts = extractTimestamp(raw) || extractTimestampFromItems(items);
       var id = state.currentCatalogId;
       var c = state.catalogs[id];
