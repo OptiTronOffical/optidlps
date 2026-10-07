@@ -1,5 +1,10 @@
 
-# PS5 Package Store
+# PS5 Package index
+
+<a href="https://postimg.cc/5Yg9sWvK" target="_blank"><img src="https://i.postimg.cc/8cQFP1CG/Screenshot-2026-10-07-00-57-29.png" alt="Screenshot-2026-10-07-00-57-29"></a><br><br>
+<a href="https://postimg.cc/7G9PKr7s" target="_blank"><img src="https://i.postimg.cc/Bb98Qqv0/Screenshot-2026-10-07-00-57-41.png" alt="Screenshot-2026-10-07-00-57-41"></a><br><br>
+<a href="https://postimg.cc/vgh80w93" target="_blank"><img src="https://i.postimg.cc/x8DkT0dD/Screenshot-2026-10-07-00-57-52.png" alt="Screenshot-2026-10-07-00-57-52"></a><br><br>
+
 
 A sleek, standalone web library for browsing a PS5 package catalog — games, DLC, updates, and more. Drop a JSON file next to the HTML, open it in a browser, and browse. No build step, no dependencies, no server required beyond a static file host.
 
